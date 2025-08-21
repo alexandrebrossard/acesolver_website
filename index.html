@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AceSolver — Poker AI for iPhone</title>
+  <meta name="description" content="AceSolver is a poker AI app for iPhone. Enter any poker situation and get the best next action—fast, clear, and confidence‑boosting." />
+  <meta property="og:title" content="AceSolver — Poker AI for iPhone" />
+  <meta property="og:description" content="Enter any poker situation. Get the best next action." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0f1115" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #141821;
+      --text: #e6e9ef;
+      --muted: #9aa4b2;
+      --link: #8ab4ff;
+      --border: #252b36;
+      --accent: #c6f6d5; /* soft mint */
+      --accent-ink: #0a0f0c;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+
+    html, body { height: 100%; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--text);
+      background: radial-gradient(1200px 900px at 70% -10%, rgba(198,246,213,.10), transparent 60%), var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    .container { max-width: 1120px; margin: 0 auto; padding: 24px; }
+    .header { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0 8px; border-bottom: 1px solid var(--border); }
+
+    .brand { display: flex; align-items: center; gap: 12px; min-height: 44px; }
+    .logo-wrap { display: grid; place-items: center; width: 40px; height: 40px; background: linear-gradient(180deg,#1c2230,#121725); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .logo-wrap img { display: block; max-width: 100%; max-height: 100%; }
+    .brand-title { font-size: 18px; font-weight: 600; letter-spacing: 0.2px; }
+    .brand-sub { font-size: 12px; color: var(--muted); }
+
+    .nav { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+    .btn { appearance: none; border: 0; border-radius: 999px; padding: 12px 18px; font-weight: 600; cursor: pointer; transition: transform .05s ease, filter .2s ease; }
+    .btn:active { transform: translateY(1px); }
+    .btn-primary { background: var(--accent); color: var(--accent-ink); }
+    .btn-ghost { background: transparent; color: var(--text); border: 1px solid var(--border); }
+    .btn-ghost:hover { filter: brightness(1.15); }
+
+    .hero { display: grid; grid-template-columns: 1.2fr 1fr; gap: 36px; align-items: center; padding: 56px 0; }
+    .kicker { display:inline-block; padding: 6px 10px; border:1px solid var(--border); border-radius: 999px; color: var(--muted); font-size:12px; letter-spacing:.3px; }
+    h1 { font-size: clamp(30px, 4.2vw, 56px); line-height: 1.05; margin: 14px 0 10px; }
+    .lead { font-size: clamp(16px, 1.5vw, 20px); color: var(--muted); max-width: 52ch; }
+    .cta-row { display:flex; gap: 12px; flex-wrap: wrap; margin-top: 18px; }
+
+    .phone { background: linear-gradient(180deg,#1c2230,#0c1018); border:1px solid var(--border); border-radius: 42px; padding: 16px; width: min(360px, 90%); box-shadow: var(--shadow); margin: 0 auto; }
+    .screen { background: linear-gradient(180deg,#0b1017,#0b121a); border-radius: 30px; border:1px solid #1a2230; aspect-ratio: 9/19.5; position: relative; overflow: hidden; display:grid; place-items:center; }
+    .screen::before { content:""; position:absolute; inset:0; background: radial-gradient(600px 400px at 70% 0%, rgba(138,180,255,.12), transparent 40%); }
+    .screen .placeholder { text-align:center; padding: 24px; color: var(--muted); }
+    .screen .placeholder h3 { margin: 0 0 6px; font-weight: 600; color: var(--text); font-size: 16px; }
+    .screen .chip { display:inline-block; padding:6px 10px; border-radius:999px; border:1px dashed #2a3345; margin-top:8px; font-size:12px; color:#aab3c2; }
+
+    .section { padding: 32px 0 8px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .card { background: linear-gradient(180deg,#151a23,#10141c); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+    .card h3 { margin-top: 4px; margin-bottom: 4px; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+
+    .how { display:grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .step { background: transparent; border: 1px dashed var(--border); border-radius: var(--radius); padding: 16px; }
+    .num { display:inline-grid; place-items:center; width:28px; height:28px; border-radius:50%; background: var(--accent); color: var(--accent-ink); font-weight:700; font-size:13px; margin-bottom: 8px; }
+
+    .byline { color: var(--muted); font-size: 14px; }
+
+    .footer { margin-top: 40px; border-top: 1px solid var(--border); padding: 20px 0 64px; display:flex; align-items:center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .links { display:flex; gap: 10px; flex-wrap: wrap; }
+
+    /* Responsive */
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .how { grid-template-columns: 1fr; }
+      .footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="container header" role="banner">
+    <div class="brand" aria-label="AceSolver brand">
+      <div class="logo-wrap" aria-hidden="true">
+        <!-- ✅ Drop your logo file in the project and set its path below.
+             Example: <img src="assets/acesolver-logo.svg" alt="AceSolver logo" />
+             PNG/SVG recommended. The container scales it neatly. -->
+        <!-- <img src="assets/acesolver-logo.svg" alt="AceSolver logo" /> -->
+      </div>
+      <div>
+        <div class="brand-title">AceSolver</div>
+        <div class="brand-sub">Poker AI for iPhone</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a class="btn btn-ghost" href="https://legal.acesolver.com/privacy/" target="_blank" rel="noopener" aria-label="Privacy Policy">Privacy Policy</a>
+      <a class="btn btn-ghost" href="https://legal.acesolver.com/terms/" target="_blank" rel="noopener" aria-label="Terms of Use">Terms of Use</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container hero" id="home">
+      <div>
+        <span class="kicker">Built by AppThemis Technologies</span>
+        <h1>Enter any poker situation.<br/>Get the <em>best next action</em>.</h1>
+        <p class="lead">AceSolver turns complex hands into clear, confident plays. Input stacks, positions, actions—tap <strong>Analyze</strong>—and receive a precise recommendation in seconds.</p>
+        <div class="cta-row">
+          <!-- 🔗 Replace # with your App Store URL when ready -->
+          <a class="btn btn-primary" href="#" aria-label="Download on the App Store (coming soon)">Download on the App Store</a>
+          <a class="btn btn-ghost" href="https://legal.acesolver.com/privacy/" target="_blank" rel="noopener">Privacy</a>
+          <a class="btn btn-ghost" href="https://legal.acesolver.com/terms/" target="_blank" rel="noopener">Terms</a>
+        </div>
+      </div>
+      <div class="phone" aria-hidden="true">
+        <div class="screen">
+          <!-- 📱 Swap this placeholder for a real screenshot: 
+               <img src="assets/app-screenshot.png" alt="AceSolver app screenshot" style="width:100%;height:100%;object-fit:cover;" /> -->
+          <div class="placeholder">
+            <h3>AceSolver UI</h3>
+            <p>Drop a screenshot here to showcase the app.</p>
+            <span class="chip">assets/app-screenshot.png</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section" id="features" aria-labelledby="features-title">
+      <h2 id="features-title" style="margin:0 0 12px">Why AceSolver</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Any Situation</h3>
+          <p>Cash, MTT, tricky multi‑way pots—enter stacks, positions, actions, and cards. AceSolver handles the context.</p>
+        </article>
+        <article class="card">
+          <h3>Actionable Guidance</h3>
+          <p>No vague tips. Get a decisive next move with concise reasoning to back it up.</p>
+        </article>
+        <article class="card">
+          <h3>Fast & Intuitive</h3>
+          <p>Designed for clarity—minimal taps, smart defaults, and clean visuals to keep you in the zone.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container section" id="how" aria-labelledby="how-title">
+      <h2 id="how-title" style="margin:0 0 12px">How it works</h2>
+      <div class="how">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Describe the hand</h3>
+          <p>Players, stacks, positions, cards, and actions so far.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Tap <em>Analyze</em></h3>
+          <p>AceSolver processes the full context with purpose‑built poker logic.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Make the best move</h3>
+          <p>Receive the recommended action with clear reasoning you can trust.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container footer" role="contentinfo">
+    <div>
+      <div style="font-weight:600">AceSolver</div>
+      <div class="byline">© 2025 AppThemis Technologies. All rights reserved.</div>
+    </div>
+    <div class="links">
+      <a class="btn btn-ghost" href="https://legal.acesolver.com/privacy/" target="_blank" rel="noopener">Privacy Policy</a>
+      <a class="btn btn-ghost" href="https://legal.acesolver.com/terms/" target="_blank" rel="noopener">Terms of Use</a>
+    </div>
+  </footer>
+</body>
+</html>
