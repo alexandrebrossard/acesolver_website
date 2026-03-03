@@ -132,7 +132,7 @@
     .carousel-track::-webkit-scrollbar{display:none}
     .carousel-item{flex:0 0 280px;scroll-snap-align:start;background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s,border-color .2s}
     .carousel-item:hover{transform:translateY(-3px);border-color:var(--border-l)}
-    .carousel-img{width:100%;aspect-ratio:9/16;background:#111;display:block;object-fit:cover}
+    .carousel-img{width:100%;aspect-ratio:9/19;background:#111;display:block;object-fit:contain}
     .carousel-label{padding:12px 16px;font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
     .carousel-label span{font-size:12px;color:var(--muted);font-weight:400}
     .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
@@ -240,7 +240,7 @@
   <div class="w hi">
     <div>
       <div class="hk a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Next-gen AI poker solver for iPhone</div>
-      <h1 class="a a1">Know what to do.<br/>Understand <em>why</em>.</h1>
+      <h1 class="a a1">Stop guessing.<br/>Start <em>understanding</em>.</h1>
       <p class="hl a a2">AceSolver doesn't just tell you the optimal play — it <strong>explains the reasoning</strong> behind every decision. That's the real game changer.</p>
       <p class="hl2 a a2">Not another library of pre-solved GTO spots. Custom-built, AI-powered with an integrated Monte Carlo equity calculator, and fine-tuned by experienced tournament professionals.</p>
       <div class="ha a a3">
@@ -466,29 +466,26 @@
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
     dot.setAttribute('aria-label', 'Go to screenshot ' + (i + 1));
     dot.addEventListener('click', function() {
-      items[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+      track.scrollTo({ left: items[i].offsetLeft - track.offsetLeft, behavior: 'smooth' });
     });
     dotsContainer.appendChild(dot);
   }
 
   const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
-  // Update dots on scroll
-  let ticking = false;
-  track.addEventListener('scroll', function() {
-    if (!ticking) {
-      window.requestAnimationFrame(function() {
-        const scrollLeft = track.scrollLeft;
-        const itemWidth = items[0].offsetWidth + 20; // gap
-        const activeIndex = Math.round(scrollLeft / itemWidth);
+  // Use IntersectionObserver for reliable active detection
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        const idx = Array.from(items).indexOf(entry.target);
         dots.forEach(function(d, i) {
-          d.classList.toggle('active', i === activeIndex);
+          d.classList.toggle('active', i === idx);
         });
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+      }
+    });
+  }, { root: track, threshold: 0.5 });
+
+  items.forEach(function(item) { observer.observe(item); });
 })();
 </script>
 
