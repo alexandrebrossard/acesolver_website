@@ -173,7 +173,7 @@ rdt('track', 'PageVisit');
 
     /* PRICING */
     .pricing{position:relative;overflow:hidden}
-    .pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:700px}
+    .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
     .price-card{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden;transition:border-color .2s}
     .price-card:hover{border-color:var(--border-l)}
     .price-card.featured{border-color:rgba(52,211,153,.3)}
@@ -243,6 +243,7 @@ rdt('track', 'PageVisit');
     <a href="#how-it-works">How It Works</a>
     <a href="#modes">Modes</a>
     <a href="#features">Features</a>
+    <a href="#plans">Plans</a>
     <a href="https://apps.apple.com/app/acesolver/id6743416127" target="_blank" rel="noopener" class="nc">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.99 2.97 12.5 4.7 9.46C5.56 7.95 7.14 7 8.82 6.97C10.1 6.95 11.32 7.85 12.11 7.85C12.89 7.85 14.37 6.77 15.92 6.93C16.57 6.96 18.39 7.18 19.56 8.9C19.47 8.96 17.39 10.15 17.41 12.68C17.44 15.73 20.06 16.68 20.09 16.69C20.06 16.76 19.67 18.14 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
       Download
@@ -420,14 +421,52 @@ rdt('track', 'PageVisit');
     <div class="fc"><div class="fci" style="background:var(--blue-d);color:var(--blue)">🧠</div><h3>Rules-exact hand reading</h3><p>Made hands, draws, outs, better combos, and Monte Carlo equity are computed from No-Limit Hold'em rules. The strategy is then explained in plain English, factoring in stacks, positions, board texture, and opponent tendencies.</p></div>
     <div class="fc"><div class="fci" style="background:var(--green-d);color:var(--green)">🎯</div><h3>Up to 10 Players</h3><p>Full multiway support with accurate pot calculations, side pots, and multi-street action sequences.</p></div>
     <div class="fc"><div class="fci" style="background:var(--purple-d);color:var(--purple)">🏆</div><h3>Tournament & ICM</h3><p>ICM pressure adjusts recommendations based on bubble proximity, payout structures, and stack dynamics.</p></div>
-    <!-- TODO: if the 3-tier subscription (Standard/Pro/Expert) ships, analysis depth is gated by plan — reframe as "depth scales with your plan" and resolve the Expert-depth vs Expert-tier name clash before finalizing. -->
-    <div class="fc"><div class="fci" style="background:var(--amber-d);color:var(--amber)">⚡</div><h3>Fast, Advanced & Expert</h3><p>Three levels of analysis depth: Fast for quick reads when you're short on time, Advanced for balanced analysis, and Expert for the toughest spots.</p></div>
+    <div class="fc"><div class="fci" style="background:var(--amber-d);color:var(--amber)">⚡</div><h3>Fast, Advanced & Expert</h3><p>Three levels of analysis depth that scale with your plan — quick reads when you're short on time, or the deepest breakdown for the toughest spots.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(244,114,182,.1);color:#f472b6">📊</div><h3>Equity & Math</h3><p>Integrated Monte Carlo simulations, Chen Score, pot odds, SPR, all computed and explained in plain language.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(34,211,238,.1);color:#22d3ee">🌍</div><h3>15 Languages</h3><p>Get full analysis in your language: English, French, Spanish, Portuguese, Japanese, Chinese, and more.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(167,139,250,.1);color:var(--purple)">👤</div><h3>15 Opponent Profiles</h3><p>Set villain types (LAG, TAG, NIT, Fish, Maniac, Trapper and more) for exploitative strategy adjustments.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(52,211,153,.1);color:var(--green)">📋</div><h3>Hand History</h3><p>Every analysis saved automatically. Review, compare, and replay past hands to track your improvement.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(251,191,36,.1);color:var(--amber)">🃏</div><h3>Hand Evaluator</h3><p>Instant hand strength, outs, and equity calculations with detailed combo counting and draw analysis.</p></div>
   </div>
+</div></section>
+
+<!-- PLANS -->
+<section class="pricing" id="plans"><div class="w">
+  <div class="sl sp">◆ Plans</div>
+  <h2 class="st">Plans that match your game</h2>
+  <p class="sd">Start free, no account needed. Each plan unlocks deeper analysis and more tools — manage and upgrade anytime in the app.</p>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <h3>Standard</h3>
+      <p class="price-desc">For getting started and locking in the fundamentals.</p>
+      <ul class="price-features">
+        <li><span class="pck">✓</span>Fast analysis on any spot</li>
+        <li><span class="pck">✓</span>Full hand reading: made hands, draws, outs, equity</li>
+        <li><span class="pck">✓</span>GTO baseline strategy, explained in plain English</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <span class="price-tag">Most popular</span>
+      <h3>Pro</h3>
+      <p class="price-desc">For serious players plugging leaks and adding lines.</p>
+      <ul class="price-features">
+        <li><span class="pck">✓</span>Everything in Standard</li>
+        <li><span class="pck">✓</span>Advanced analysis depth</li>
+        <li><span class="pck">✓</span>All 15 opponent profiles for exploitative play</li>
+        <li><span class="pck">✓</span>Hero and villain range matrices</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <h3>Expert</h3>
+      <p class="price-desc">For pros and tournament grinders in the closest spots.</p>
+      <ul class="price-features">
+        <li><span class="pck">✓</span>Everything in Pro</li>
+        <li><span class="pck">✓</span>Expert analysis depth, our deepest breakdown</li>
+        <li><span class="pck">✓</span>Full ICM and tournament strategy</li>
+      </ul>
+    </div>
+  </div>
+  <p class="sd" style="margin-top:24px;margin-bottom:0">Free to start: unlimited preflop analysis plus 3 postflop hands a day, no account needed. See current prices and subscribe in the app.</p>
 </div></section>
 
 <!-- CTA -->
