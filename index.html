@@ -17,9 +17,9 @@ rdt('track', 'PageVisit');
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AceSolver: Poker Solver & Trainer</title>
-  <meta name="description" content="AceSolver reads your exact No-Limit Hold'em spot with rules-exact hand evaluation, computes equity and ranges, then explains the best decision in plain English. A poker solver, trainer and coach for iPhone." />
-  <meta property="og:title" content="AceSolver: Understand the play, not just the answer" />
+  <title>AceSolver: iPhone Poker Trainer & Solver</title>
+  <meta name="description" content="AceSolver reads your exact No-Limit Hold'em spot with rules-exact hand evaluation, computes equity and ranges, then explains the best decision in plain English. A poker trainer, solver and coach for iPhone." />
+  <meta property="og:title" content="AceSolver: Understand why, not just what" />
   <meta property="og:description" content="Not another pre-solved GTO library. AceSolver reads your exact spot with rules-exact hand evaluation, then explains the best play in plain English. On your iPhone." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://acesolver.com/" />
@@ -27,7 +27,7 @@ rdt('track', 'PageVisit');
   <meta property="og:image" content="https://acesolver.com/Main-screen.PNG" />
   <meta property="og:image:alt" content="AceSolver poker hand analysis on iPhone" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AceSolver: Understand the play, not just the answer" />
+  <meta name="twitter:title" content="AceSolver: Understand why, not just what" />
   <meta name="twitter:description" content="Rules-exact poker hand reading, then the best play explained in plain English. For iPhone." />
   <meta name="twitter:image" content="https://acesolver.com/Main-screen.PNG" />
   <meta name="theme-color" content="#0a0e17" />
@@ -63,8 +63,8 @@ rdt('track', 'PageVisit');
     .brand-logo img{width:100%;height:100%;object-fit:contain}
     .brand-name{font-weight:700;font-size:18px}
     .nl{display:flex;align-items:center;gap:24px}
-    .nl a:not(.nc){color:var(--muted);font-size:14px;font-weight:500}.nl a:not(.nc):hover{color:var(--text)}
-    .nc{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:var(--green);color:#000;font-weight:700;font-size:13px;transition:transform .15s,box-shadow .2s}
+    .nl a:not(.nc){color:var(--muted);font-size:15px;font-weight:500}.nl a:not(.nc):hover{color:var(--text)}
+    .nc{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:var(--green);color:#000;font-weight:700;font-size:14px;transition:transform .15s,box-shadow .2s}
     .nc:hover{color:#000;transform:translateY(-1px);box-shadow:0 4px 20px rgba(52,211,153,.3)}
     .nc svg{width:14px;height:14px}
 
@@ -73,21 +73,21 @@ rdt('track', 'PageVisit');
     .hg{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(130px);opacity:.14;pointer-events:none}
     .hg1{background:var(--green);top:-200px;right:-80px}.hg2{background:var(--blue);bottom:-220px;left:-160px;opacity:.09}
     .hi{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:center;position:relative}
-    .hk{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;background:var(--green-d);border:1px solid rgba(52,211,153,.2);font-size:13px;font-weight:500;color:var(--green);margin-bottom:20px;width:fit-content}
+    .hk{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;background:var(--green-d);border:1px solid rgba(52,211,153,.2);font-size:14px;font-weight:500;color:var(--green);margin-bottom:20px;width:fit-content}
     .hk svg{width:13px;height:13px}
     .hero h1{font-size:clamp(38px,5vw,56px);font-weight:900;line-height:1.08;letter-spacing:-.025em;margin-bottom:16px}
     .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hl{font-size:18px;color:var(--body);line-height:1.7;max-width:480px;margin-bottom:10px}
     .hl strong{color:var(--text);font-weight:600}
-    .hl2{font-size:15px;color:var(--muted);line-height:1.6;max-width:480px;margin-bottom:28px}
+    .hl2{font-size:16px;color:var(--muted);line-height:1.6;max-width:480px;margin-bottom:28px}
     .ha{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:600;font-size:15px;transition:all .2s;border:none;cursor:pointer;text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:600;font-size:16px;transition:all .2s;border:none;cursor:pointer;text-decoration:none}
     .bp{background:var(--green);color:#0a0e17;box-shadow:0 4px 24px rgba(52,211,153,.25)}
     .bp:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(52,211,153,.35);color:#0a0e17}
     .bs{background:var(--bg-c);color:var(--text);border:1px solid var(--border-l)}.bs:hover{background:var(--bg-h);color:var(--text)}
     .btn svg{width:16px;height:16px}
     .free-highlights{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .free-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:var(--green-g);border:1px solid rgba(52,211,153,.15);font-size:14px;font-weight:500;color:var(--green)}
+    .free-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:var(--green-g);border:1px solid rgba(52,211,153,.15);font-size:15px;font-weight:500;color:var(--green)}
 
     /* PHONE FRAME */
     .pf{width:320px;height:650px;margin:0 auto;background:linear-gradient(160deg,#1a2235,#0f1520);border-radius:42px;border:2px solid var(--border-l);box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden;position:relative}
@@ -97,14 +97,14 @@ rdt('track', 'PageVisit');
     /* TRUST BAR */
     .trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-s);padding:28px 0}
     .tg{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:28px 48px}
-    .ti{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--body);font-weight:500}
+    .ti{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--body);font-weight:500}
     .ti span.tn{font-size:26px;font-weight:800;color:var(--text);letter-spacing:-.02em}
-    .ti span.tc{color:var(--muted);font-size:13px;line-height:1.3}
+    .ti span.tc{color:var(--muted);font-size:14px;line-height:1.3}
     .ti .dot{width:4px;height:4px;border-radius:50%;background:var(--dim);flex-shrink:0}
 
     /* SECTIONS */
     section{padding:64px 0}
-    .sl{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
+    .sl{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
     .sg{color:var(--green)}.sbl{color:var(--blue)}.sp{color:var(--purple)}.sa{color:var(--amber)}
     .st{font-size:clamp(26px,3.5vw,38px);font-weight:800;letter-spacing:-.015em;margin-bottom:10px;line-height:1.15}
     .sd{color:var(--body);font-size:16px;max-width:540px;margin-bottom:36px;line-height:1.65}
@@ -118,9 +118,9 @@ rdt('track', 'PageVisit');
     .diff-card.dc-no::before{background:linear-gradient(90deg,var(--dim),var(--border-l))}
     .diff-card h3{font-size:20px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
     .diff-card h3 .icon{font-size:22px}
-    .diff-card p{font-size:15px;color:var(--body);line-height:1.65}
+    .diff-card p{font-size:16px;color:var(--body);line-height:1.65}
     .diff-card ul{list-style:none;margin-top:14px}
-    .diff-card ul li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:15px;color:var(--body);border-top:1px solid var(--border)}
+    .diff-card ul li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:16px;color:var(--body);border-top:1px solid var(--border)}
     .diff-card ul li:first-child{border-top:none}
     .diff-card ul li .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-top:1px}
     .dc-yes .ck{background:var(--green-d);color:var(--green)}
@@ -136,8 +136,8 @@ rdt('track', 'PageVisit');
     .mi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:14px}
     .mi--s{background:var(--blue-d)}.mi--t{background:var(--green-d)}
     .mc h3{font-size:20px;font-weight:700;margin-bottom:8px}
-    .mc .ms{color:var(--body);font-size:15px;margin-bottom:18px;line-height:1.65}
-    .mf{list-style:none}.mf li{display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:15px;color:var(--body);border-top:1px solid var(--border)}.mf li:first-child{border-top:none}
+    .mc .ms{color:var(--body);font-size:16px;margin-bottom:18px;line-height:1.65}
+    .mf{list-style:none}.mf li{display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:16px;color:var(--body);border-top:1px solid var(--border)}.mf li:first-child{border-top:none}
     .fi{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-top:1px}
     .mc--s .fi{background:var(--blue-d);color:var(--blue)}.mc--t .fi{background:var(--green-d);color:var(--green)}
 
@@ -149,8 +149,8 @@ rdt('track', 'PageVisit');
     .carousel-item{flex:0 0 280px;scroll-snap-align:start;background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s,border-color .2s}
     .carousel-item:hover{transform:translateY(-3px);border-color:var(--border-l)}
     .carousel-img{width:100%;aspect-ratio:9/19;background:#111;display:block;object-fit:contain}
-    .carousel-label{padding:12px 16px;font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
-    .carousel-label span{font-size:12px;color:var(--muted);font-weight:400}
+    .carousel-label{padding:12px 16px;font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
+    .carousel-label span{font-size:13px;color:var(--muted);font-weight:400}
     .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
     .carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border-l);border:none;cursor:pointer;transition:all .2s;padding:0}
     .carousel-dot.active{background:var(--green);width:24px;border-radius:4px}
@@ -161,7 +161,7 @@ rdt('track', 'PageVisit');
     .riw{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);max-width:320px;margin:0 auto}
     .riw img{width:100%;height:auto;display:block}
     .rli{list-style:none;display:flex;flex-direction:column;gap:12px}
-    .rli li{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--body)}
+    .rli li{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--body)}
     .rc{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:var(--purple-d);color:var(--purple);font-size:11px;flex-shrink:0}
 
     /* FEATURES */
@@ -169,7 +169,7 @@ rdt('track', 'PageVisit');
     .fc{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;transition:border-color .25s,transform .2s}
     .fc:hover{border-color:var(--border-l);transform:translateY(-2px)}
     .fci{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:18px;margin-bottom:12px}
-    .fc h3{font-size:16px;font-weight:600;margin-bottom:6px}.fc p{font-size:15px;color:var(--body);line-height:1.6}
+    .fc h3{font-size:16px;font-weight:600;margin-bottom:6px}.fc p{font-size:16px;color:var(--body);line-height:1.6}
 
     /* PRICING */
     .pricing{position:relative;overflow:hidden}
@@ -178,13 +178,13 @@ rdt('track', 'PageVisit');
     .price-card:hover{border-color:var(--border-l)}
     .price-card.featured{border-color:rgba(52,211,153,.3)}
     .price-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--blue))}
-    .price-tag{font-size:13px;font-weight:600;color:var(--green);background:var(--green-d);padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:14px}
+    .price-tag{font-size:14px;font-weight:600;color:var(--green);background:var(--green-d);padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:14px}
     .price-card h3{font-size:22px;font-weight:700;margin-bottom:6px}
-    .price-card .price-desc{font-size:14px;color:var(--muted);margin-bottom:18px;line-height:1.6}
+    .price-card .price-desc{font-size:15px;color:var(--muted);margin-bottom:18px;line-height:1.6}
     .price-card .price-amount{font-size:36px;font-weight:800;margin-bottom:4px;letter-spacing:-.02em}
-    .price-card .price-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
+    .price-card .price-sub{font-size:14px;color:var(--muted);margin-bottom:20px}
     .price-features{list-style:none}
-    .price-features li{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:15px;color:var(--body);border-top:1px solid var(--border)}
+    .price-features li{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:16px;color:var(--body);border-top:1px solid var(--border)}
     .price-features li:first-child{border-top:none}
     .price-features .pck{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:9px;flex-shrink:0;background:var(--green-d);color:var(--green)}
 
@@ -196,8 +196,8 @@ rdt('track', 'PageVisit');
     /* FOOTER */
     footer{border-top:1px solid var(--border);padding:28px 0 56px}
     .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    .fb{font-weight:600;font-size:15px}.fc2{font-size:13px;color:var(--dim);margin-top:2px}
-    .flinks{display:flex;align-items:center;gap:18px}.flinks a{font-size:13px;color:var(--muted);display:inline-flex;align-items:center;gap:5px}.flinks a:hover{color:var(--text)}
+    .fb{font-weight:600;font-size:16px}.fc2{font-size:14px;color:var(--dim);margin-top:2px}
+    .flinks{display:flex;align-items:center;gap:18px}.flinks a{font-size:14px;color:var(--muted);display:inline-flex;align-items:center;gap:5px}.flinks a:hover{color:var(--text)}
     .flinks svg{width:16px;height:16px}
     .social-links{display:flex;align-items:center;gap:14px;margin-top:6px}
     .social-links a{color:var(--muted);transition:color .2s}.social-links a:hover{color:var(--text)}
@@ -256,10 +256,10 @@ rdt('track', 'PageVisit');
   <div class="hg hg1"></div><div class="hg hg2"></div>
   <div class="w hi">
     <div>
-      <div class="hk a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Poker solver, trainer &amp; coach for iPhone</div>
-      <h1 class="a a1">Understand the play,<br/>not just the <em>answer</em>.</h1>
-      <p class="hl a a2">AceSolver reads your exact spot with rules-exact hand evaluation, computes equity and ranges, then <strong>explains the best decision in plain English</strong>.</p>
-      <p class="hl2 a a2">Not another library of pre-solved GTO spots. Every spot is worked out on demand for your exact stacks, positions, and action, then explained in plain English and validated by experienced tournament professionals.</p>
+      <div class="hk a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Poker trainer, solver &amp; coach for iPhone</div>
+      <h1 class="a a1">Understand <em>why</em>,<br/>not just what.</h1>
+      <p class="hl a a2">Enter any No-Limit Hold'em spot. AceSolver reads the hand from poker rules, computes equity, ranges, pot odds, and SPR, then <strong>explains the best decision in plain English</strong>.</p>
+      <p class="hl2 a a2">Rules-exact hand reading, not AI guesswork. Not another library of pre-solved GTO spots.</p>
       <div class="ha a a3">
         <a class="btn bp" href="https://apps.apple.com/app/acesolver/id6743416127" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.99 2.97 12.5 4.7 9.46C5.56 7.95 7.14 7 8.82 6.97C10.1 6.95 11.32 7.85 12.11 7.85C12.89 7.85 14.37 6.77 15.92 6.93C16.57 6.96 18.39 7.18 19.56 8.9C19.47 8.96 17.39 10.15 17.41 12.68C17.44 15.73 20.06 16.68 20.09 16.69C20.06 16.76 19.67 18.14 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
@@ -274,7 +274,7 @@ rdt('track', 'PageVisit');
         <div class="free-pill">✦ Preflop solver: always free, no daily limit</div>
         <div class="free-pill">✦ 3 free postflop hands per day, no account needed</div>
       </div>
-      <p class="a a3" style="font-size:13px;color:var(--muted);margin-top:14px;max-width:480px">Built for poker study, training, and post-session review. Not for in-game assistance.</p>
+      <p class="a a3" style="font-size:14px;color:var(--muted);margin-top:14px;max-width:480px">Built for poker study, training, and post-session review. Not for in-game assistance.</p>
     </div>
     <div class="a a3">
       <div class="pf"><div class="ps"><img src="Main-screen.PNG" alt="AceSolver app: rules-exact poker hand analysis main screen"/></div></div>
@@ -395,10 +395,10 @@ rdt('track', 'PageVisit');
     <div class="mc mc--t">
       <div class="mi mi--t">📖</div>
       <h3>Trainer Mode</h3>
-      <p class="ms">Practice against AI opponents and get instant coaching on every decision.</p>
+      <p class="ms">Practice against realistic opponents and get instant coaching on every decision.</p>
       <ul class="mf">
         <li><span class="fi">→</span>The game runs automatically, just play your spots</li>
-        <li><span class="fi">→</span>AI villains: LAG, TAG, Calling Station, Trapper & more</li>
+        <li><span class="fi">→</span>Opponents: LAG, TAG, Calling Station, Trapper & more</li>
         <li><span class="fi">→</span>See the recommended play after every decision</li>
         <li><span class="fi">→</span>Shuffle positions to train every seat</li>
         <li><span class="fi">→</span>Build intuition before hitting real tables</li>
@@ -417,9 +417,10 @@ rdt('track', 'PageVisit');
     <div class="fc"><div class="fci" style="background:var(--green-d);color:var(--green)">🎯</div><h3>Up to 10 Players</h3><p>Full multiway support with accurate pot calculations, side pots, and multi-street action sequences.</p></div>
     <div class="fc"><div class="fci" style="background:var(--purple-d);color:var(--purple)">🏆</div><h3>Tournament & ICM</h3><p>ICM pressure adjusts recommendations based on bubble proximity, payout structures, and stack dynamics.</p></div>
     <div class="fc"><div class="fci" style="background:var(--amber-d);color:var(--amber)">⚡</div><h3>Fast, Advanced & Expert</h3><p>Three levels of analysis depth that scale with your plan — quick reads when you're short on time, or the deepest breakdown for the toughest spots.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(244,114,182,.1);color:#f472b6">📊</div><h3>Equity & Math</h3><p>Integrated Monte Carlo simulations, Chen Score, pot odds, SPR, all computed and explained in plain language.</p></div>
+    <div class="fc"><div class="fci" style="background:rgba(244,114,182,.1);color:#f472b6">📊</div><h3>Equity & Math</h3><p>Integrated Monte Carlo simulations, pot odds, SPR, all computed and explained in plain language.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(34,211,238,.1);color:#22d3ee">🌍</div><h3>15 Languages</h3><p>Get full analysis in your language: English, French, Spanish, Portuguese, Japanese, Chinese, and more.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(167,139,250,.1);color:var(--purple)">👤</div><h3>15 Opponent Profiles</h3><p>Set villain types (LAG, TAG, NIT, Fish, Maniac, Trapper and more) for exploitative strategy adjustments.</p></div>
+    <div class="fc"><div class="fci" style="background:rgba(167,139,250,.1);color:var(--purple)">👤</div><h3>15 Opponent Profiles</h3><p>Set opponent profiles (LAG, TAG, NIT, Fish, Maniac, Trapper and more) for exploitative strategy adjustments.</p></div>
+    <div class="fc"><div class="fci" style="background:var(--blue-d);color:var(--blue)">🎭</div><h3>Play as Your Hero</h3><p>Choose your Hero style: GTO, TAG, NIT, or LAG, and get strategy tuned to how you play. Pro unlocks TAG and GTO; Expert adds NIT and LAG.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(52,211,153,.1);color:var(--green)">📋</div><h3>Hand History</h3><p>Every analysis saved automatically. Review, compare, and replay past hands to track your improvement.</p></div>
     <div class="fc"><div class="fci" style="background:rgba(251,191,36,.1);color:var(--amber)">🃏</div><h3>Hand Evaluator</h3><p>Instant hand strength, outs, and equity calculations with detailed combo counting and draw analysis.</p></div>
   </div>
@@ -445,9 +446,9 @@ rdt('track', 'PageVisit');
       <p class="price-desc" style="color:var(--green)">Fast and advanced engines</p>
       <ul class="price-features">
         <li><span class="pck">✓</span>Everything in Standard</li>
-        <li><span class="pck">✓</span>All 15 player types, not just GTO</li>
+        <li><span class="pck">✓</span>All 15 opponent profiles, not just GTO</li>
         <li><span class="pck">✓</span>Build hero and villain ranges</li>
-        <li><span class="pck">✓</span>Play as a TAG or GTO</li>
+        <li><span class="pck">✓</span>Play as Hero: TAG or GTO</li>
       </ul>
     </div>
     <div class="price-card">
@@ -455,9 +456,9 @@ rdt('track', 'PageVisit');
       <p class="price-desc" style="color:var(--green)">Fast, advanced and expert engines</p>
       <ul class="price-features">
         <li><span class="pck">✓</span>Everything in Pro</li>
-        <li><span class="pck">✓</span>Add NIT and LAG styles</li>
+        <li><span class="pck">✓</span>Adds NIT and LAG Hero profiles</li>
         <li><span class="pck">✓</span>Deepest analysis and explanations</li>
-        <li><span class="pck">✓</span>5 ICM levels for tournaments</li>
+        <li><span class="pck">✓</span>6 ICM levels for tournaments</li>
       </ul>
     </div>
   </div>
@@ -495,6 +496,10 @@ rdt('track', 'PageVisit');
       <!-- Instagram -->
       <a href="https://www.instagram.com/acesolverapp/" target="_blank" rel="noopener" title="Instagram">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/profile.php?id=61591538189371" target="_blank" rel="noopener" title="Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
       </a>
     </div>
   </div>
