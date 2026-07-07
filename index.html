@@ -17,7 +17,7 @@ rdt('track', 'PageVisit');
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AceSolver: AI Poker Solver & Trainer That Explains Why</title>
+  <title>AceSolver: Poker Solver & Trainer</title>
   <meta name="description" content="AceSolver reads your exact No-Limit Hold'em spot with rules-exact hand evaluation, computes equity and ranges, then explains the best decision in plain English. A poker solver, trainer and coach for iPhone." />
   <meta property="og:title" content="AceSolver: Understand the play, not just the answer" />
   <meta property="og:description" content="Not another pre-solved GTO library. AceSolver reads your exact spot with rules-exact hand evaluation, then explains the best play in plain English. On your iPhone." />
@@ -40,7 +40,7 @@ rdt('track', 'PageVisit');
   <style>
     :root{
       --bg:#0a0e17;--bg-s:#111827;--bg-c:#151d2e;--bg-h:#1a2438;
-      --text:#f0f3f9;--body:#c8d0e0;--muted:#9aa3b8;--dim:#6b7590;
+      --text:#f0f3f9;--body:#c8d0e0;--muted:#a3adc0;--dim:#8b93a8;
       --green:#34d399;--green-d:rgba(52,211,153,.12);--green-g:rgba(52,211,153,.06);
       --blue:#60a5fa;--blue-d:rgba(96,165,250,.12);
       --purple:#a78bfa;--purple-d:rgba(167,139,250,.12);
@@ -120,7 +120,7 @@ rdt('track', 'PageVisit');
     .diff-card h3 .icon{font-size:22px}
     .diff-card p{font-size:15px;color:var(--body);line-height:1.65}
     .diff-card ul{list-style:none;margin-top:14px}
-    .diff-card ul li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:14px;color:var(--body);border-top:1px solid var(--border)}
+    .diff-card ul li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:15px;color:var(--body);border-top:1px solid var(--border)}
     .diff-card ul li:first-child{border-top:none}
     .diff-card ul li .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-top:1px}
     .dc-yes .ck{background:var(--green-d);color:var(--green)}
@@ -136,8 +136,8 @@ rdt('track', 'PageVisit');
     .mi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:14px}
     .mi--s{background:var(--blue-d)}.mi--t{background:var(--green-d)}
     .mc h3{font-size:20px;font-weight:700;margin-bottom:8px}
-    .mc .ms{color:var(--body);font-size:14px;margin-bottom:18px;line-height:1.65}
-    .mf{list-style:none}.mf li{display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:14px;color:var(--body);border-top:1px solid var(--border)}.mf li:first-child{border-top:none}
+    .mc .ms{color:var(--body);font-size:15px;margin-bottom:18px;line-height:1.65}
+    .mf{list-style:none}.mf li{display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:15px;color:var(--body);border-top:1px solid var(--border)}.mf li:first-child{border-top:none}
     .fi{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-top:1px}
     .mc--s .fi{background:var(--blue-d);color:var(--blue)}.mc--t .fi{background:var(--green-d);color:var(--green)}
 
@@ -169,7 +169,7 @@ rdt('track', 'PageVisit');
     .fc{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;transition:border-color .25s,transform .2s}
     .fc:hover{border-color:var(--border-l);transform:translateY(-2px)}
     .fci{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:18px;margin-bottom:12px}
-    .fc h3{font-size:16px;font-weight:600;margin-bottom:6px}.fc p{font-size:14px;color:var(--body);line-height:1.6}
+    .fc h3{font-size:16px;font-weight:600;margin-bottom:6px}.fc p{font-size:15px;color:var(--body);line-height:1.6}
 
     /* PRICING */
     .pricing{position:relative;overflow:hidden}
@@ -184,7 +184,7 @@ rdt('track', 'PageVisit');
     .price-card .price-amount{font-size:36px;font-weight:800;margin-bottom:4px;letter-spacing:-.02em}
     .price-card .price-sub{font-size:13px;color:var(--muted);margin-bottom:20px}
     .price-features{list-style:none}
-    .price-features li{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:14px;color:var(--body);border-top:1px solid var(--border)}
+    .price-features li{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:15px;color:var(--body);border-top:1px solid var(--border)}
     .price-features li:first-child{border-top:none}
     .price-features .pck{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:9px;flex-shrink:0;background:var(--green-d);color:var(--green)}
 
@@ -256,7 +256,7 @@ rdt('track', 'PageVisit');
   <div class="hg hg1"></div><div class="hg hg2"></div>
   <div class="w hi">
     <div>
-      <div class="hk a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Rules-exact hand reading for iPhone</div>
+      <div class="hk a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Poker solver, trainer &amp; coach for iPhone</div>
       <h1 class="a a1">Understand the play,<br/>not just the <em>answer</em>.</h1>
       <p class="hl a a2">AceSolver reads your exact spot with rules-exact hand evaluation, computes equity and ranges, then <strong>explains the best decision in plain English</strong>.</p>
       <p class="hl2 a a2">Not another library of pre-solved GTO spots. Every spot is worked out on demand for your exact stacks, positions, and action, then explained in plain English and validated by experienced tournament professionals.</p>
@@ -482,10 +482,19 @@ rdt('track', 'PageVisit');
     <div class="fb">AceSolver</div>
     <div class="fc2">© 2026 AppThemis Technologies. All rights reserved.</div>
     <div class="fc2" style="margin-top:6px;max-width:520px">Built for poker study, training, and post-session review. Not for in-game assistance.</div>
+    <div class="fc2" style="margin-top:6px;max-width:520px">AceSolver is a poker strategy and training tool intended for adults of legal gambling age. It is not directed at minors, involves no real-money gambling, and offers no opportunity to win money or prizes.</div>
     <div class="social-links">
       <!-- YouTube -->
       <a href="https://www.youtube.com/@AceSolver-MultiwayPokerSolver" target="_blank" rel="noopener" title="YouTube">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <!-- X -->
+      <a href="https://x.com/AceSolver" target="_blank" rel="noopener" title="X">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/acesolverapp/" target="_blank" rel="noopener" title="Instagram">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
       </a>
     </div>
   </div>
