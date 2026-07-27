@@ -17,8 +17,8 @@ rdt('track', 'PageVisit');
   </script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AceSolver: iPhone Poker Trainer & Solver</title>
-  <meta name="description" content="AceSolver reads your exact No-Limit Hold'em spot with rules-exact hand evaluation, computes equity and ranges, then explains the best decision in plain English. A poker trainer, solver and coach for iPhone." />
+  <title>AceSolver: iPhone Poker Trainer &amp; Solver</title>
+  <meta name="description" content="Train against realistic opponents and get coaching on every decision. Rules-exact hand reading, strategy explained in plain English. Poker trainer, solver and coach for iPhone. Free to start." />
   <meta property="og:title" content="AceSolver: Understand why, not just what" />
   <meta property="og:description" content="Not another pre-solved GTO library. AceSolver reads your exact spot with rules-exact hand evaluation, then explains the best play in plain English. On your iPhone." />
   <meta property="og:type" content="website" />
@@ -30,204 +30,285 @@ rdt('track', 'PageVisit');
   <meta name="twitter:title" content="AceSolver: Understand why, not just what" />
   <meta name="twitter:description" content="Rules-exact poker hand reading, then the best play explained in plain English. For iPhone." />
   <meta name="twitter:image" content="https://acesolver.com/Main-screen.PNG" />
-  <meta name="theme-color" content="#0a0e17" />
+  <meta name="theme-color" content="#0A1714" />
   <meta name="apple-itunes-app" content="app-id=6743416127">
   <link rel="icon" href="favicon.ico" />
   <link rel="canonical" href="https://acesolver.com/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Scroll reveals are opt-in: without JS the content is simply visible. -->
+  <script>document.documentElement.className += ' js';</script>
   <style>
     :root{
-      --bg:#0a0e17;--bg-s:#111827;--bg-c:#151d2e;--bg-h:#1a2438;
-      --text:#f0f3f9;--body:#c8d0e0;--muted:#a3adc0;--dim:#8b93a8;
-      --green:#34d399;--green-d:rgba(52,211,153,.12);--green-g:rgba(52,211,153,.06);
-      --blue:#60a5fa;--blue-d:rgba(96,165,250,.12);
-      --purple:#a78bfa;--purple-d:rgba(167,139,250,.12);
-      --amber:#fbbf24;--amber-d:rgba(251,191,36,.1);
-      --red:#f87171;
-      --border:#1e293b;--border-l:#293548;
-      --r:16px;--font:'Outfit',system-ui,-apple-system,sans-serif
+      /* Ground: deep felt */
+      --ink:#0A1714;--ink-2:#0E201B;--ink-3:#132D26;--ink-4:#17372E;
+      --line:#1C352E;--line-2:#2A5147;
+      /* Card stock */
+      --bone:#F4EFE3;--body:#B8C4BC;--ash:#87968C;--dim:#5F6F66;
+      /* Accents */
+      --carmine:#D93B2B;--carmine-d:rgba(217,59,43,.13);--carmine-l:rgba(217,59,43,.30);
+      --gold:#D2A537;--gold-d:rgba(210,165,55,.12);
+      --jade:#4FB286;--jade-d:rgba(79,178,134,.12);
+      --r:6px;--r-lg:10px;
+      --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+      --sans:'Outfit',system-ui,-apple-system,sans-serif;
+      --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
     }
-    *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-    body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    a{color:var(--blue);text-decoration:none;transition:color .2s}a:hover{color:var(--green)}
-    body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
-    .w{max-width:1140px;margin:0 auto;padding:0 28px}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--bone);background:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:var(--bone);text-decoration:none;transition:color .2s}
+    .w{max-width:1160px;margin:0 auto;padding:0 28px}
 
-    /* NAV */
-    nav{position:sticky;top:0;z-index:100;background:rgba(10,14,23,.88);backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid var(--border)}
-    .ni{display:flex;align-items:center;justify-content:space-between;height:60px}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand-logo{width:36px;height:36px;background:linear-gradient(135deg,var(--bg-c),var(--bg-s));border:1px solid var(--border-l);border-radius:9px;display:grid;place-items:center;overflow:hidden}
+    /* Felt weave: a real material, very low contrast */
+    body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;
+      background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E")}
+
+    /* ============ TYPE ROLES ============ */
+    .serif{font-family:var(--serif);font-weight:400;letter-spacing:.005em}
+    .mono{font-family:var(--mono)}
+    /* Poker notation is monospace-native: stacks, positions, sizings, hands */
+    .nota{font-family:var(--mono);font-size:.86em;letter-spacing:-.01em}
+
+    /* ============ NAV ============ */
+    nav{position:sticky;top:0;z-index:100;background:rgba(10,23,20,.90);backdrop-filter:blur(18px) saturate(1.3);border-bottom:1px solid var(--line)}
+    .ni{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:11px}
+    .brand-logo{width:34px;height:34px;background:var(--ink-3);border:1px solid var(--line-2);border-radius:var(--r);display:grid;place-items:center;overflow:hidden}
     .brand-logo img{width:100%;height:100%;object-fit:contain}
-    .brand-name{font-weight:700;font-size:18px}
-    .nl{display:flex;align-items:center;gap:24px}
-    .nl a:not(.nc){color:var(--muted);font-size:15px;font-weight:500}.nl a:not(.nc):hover{color:var(--text)}
-    .nc{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:999px;background:var(--green);color:#000;font-weight:700;font-size:14px;transition:transform .15s,box-shadow .2s}
-    .nc:hover{color:#000;transform:translateY(-1px);box-shadow:0 4px 20px rgba(52,211,153,.3)}
+    .brand-name{font-family:var(--serif);font-size:23px;letter-spacing:.01em;line-height:1}
+    .nl{display:flex;align-items:center;gap:26px}
+    .nl a:not(.nc){font-family:var(--mono);color:var(--ash);font-size:12px;font-weight:500;letter-spacing:.09em;text-transform:uppercase}
+    .nl a:not(.nc):hover{color:var(--bone)}
+    .nc{display:inline-flex;align-items:center;gap:7px;padding:9px 17px;border-radius:var(--r);background:var(--carmine);color:var(--bone);font-weight:600;font-size:14px;transition:background .2s}
+    .nc:hover{background:#E8503F;color:var(--bone)}
     .nc svg{width:14px;height:14px}
 
-    /* HERO */
-    .hero{position:relative;padding:72px 0 56px;overflow:hidden}
-    .hg{position:absolute;width:600px;height:600px;border-radius:50%;filter:blur(130px);opacity:.14;pointer-events:none}
-    .hg1{background:var(--green);top:-200px;right:-80px}.hg2{background:var(--blue);bottom:-220px;left:-160px;opacity:.09}
-    .hi{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:center;position:relative}
-    .hk{display:inline-flex;align-items:center;gap:7px;padding:5px 13px;border-radius:999px;background:var(--green-d);border:1px solid rgba(52,211,153,.2);font-size:14px;font-weight:500;color:var(--green);margin-bottom:20px;width:fit-content}
-    .hk svg{width:13px;height:13px}
-    .hero h1{font-size:clamp(38px,5vw,56px);font-weight:900;line-height:1.08;letter-spacing:-.025em;margin-bottom:16px}
-    .hero h1 em{font-style:normal;background:linear-gradient(135deg,var(--green),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hl{font-size:18px;color:var(--body);line-height:1.7;max-width:480px;margin-bottom:10px}
-    .hl strong{color:var(--text);font-weight:600}
-    .hl2{font-size:16px;color:var(--muted);line-height:1.6;max-width:480px;margin-bottom:28px}
+    /* ============ HERO ============ */
+    .hero{position:relative;padding:76px 0 60px;overflow:hidden}
+    .hero::after{content:'';position:absolute;top:-260px;right:-180px;width:720px;height:720px;border-radius:50%;
+      background:radial-gradient(circle,rgba(79,178,134,.10),transparent 66%);pointer-events:none}
+    .hi{display:grid;grid-template-columns:1fr 460px;gap:56px;align-items:center;position:relative;z-index:1}
+    .hk{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ash);margin-bottom:22px}
+    .hk i{font-style:normal;color:var(--carmine);font-size:13px}
+    .hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6.4vw,78px);line-height:1.02;letter-spacing:-.012em;margin-bottom:22px}
+    .hero h1 em{font-style:italic;color:var(--carmine)}
+    .hl{font-size:19px;color:var(--body);line-height:1.62;max-width:512px;margin-bottom:12px}
+    .hl strong{color:var(--bone);font-weight:500}
+    .hl2{font-size:15px;color:var(--ash);line-height:1.6;max-width:512px;margin-bottom:30px}
     .ha{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:12px;font-weight:600;font-size:16px;transition:all .2s;border:none;cursor:pointer;text-decoration:none}
-    .bp{background:var(--green);color:#0a0e17;box-shadow:0 4px 24px rgba(52,211,153,.25)}
-    .bp:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(52,211,153,.35);color:#0a0e17}
-    .bs{background:var(--bg-c);color:var(--text);border:1px solid var(--border-l)}.bs:hover{background:var(--bg-h);color:var(--text)}
+    .btn{display:inline-flex;align-items:center;gap:9px;padding:14px 26px;border-radius:var(--r);font-weight:600;font-size:15.5px;transition:background .2s,border-color .2s;border:1px solid transparent;cursor:pointer;text-decoration:none;font-family:var(--sans)}
+    .bp{background:var(--carmine);color:var(--bone)}
+    .bp:hover{background:#E8503F;color:var(--bone)}
+    .bs{background:transparent;color:var(--bone);border-color:var(--line-2)}
+    .bs:hover{background:var(--ink-2);border-color:var(--ash);color:var(--bone)}
     .btn svg{width:16px;height:16px}
-    .free-highlights{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-    .free-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 14px;border-radius:10px;background:var(--green-g);border:1px solid rgba(52,211,153,.15);font-size:15px;font-weight:500;color:var(--green)}
+    .free-highlights{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+    .free-pill{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:var(--r);background:var(--ink-2);border:1px solid var(--line);font-size:14px;color:var(--body)}
+    .free-pill i{font-style:normal;color:var(--jade);font-size:11px}
+    .hero-fine{font-size:13px;color:var(--dim);margin-top:16px;max-width:512px}
 
-    /* PHONE FRAME */
-    .pf{width:320px;height:650px;margin:0 auto;background:linear-gradient(160deg,#1a2235,#0f1520);border-radius:42px;border:2px solid var(--border-l);box-shadow:0 20px 60px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden;position:relative}
-    .pf::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:100px;height:24px;background:#0f1520;border-radius:0 0 16px 16px;z-index:2}
-    .ps{position:absolute;inset:8px;border-radius:34px;overflow:hidden;background:#111}.ps img{width:100%;height:100%;object-fit:cover}
+    /* ============ SIGNATURE: THE TABLE ============ */
+    .sig{position:relative}
+    .tbl{position:relative;aspect-ratio:1/.92;background:
+        radial-gradient(ellipse at 50% 42%,var(--ink-4),var(--ink-2) 68%);
+      border:1px solid var(--line-2);border-radius:50%/44%;box-shadow:0 24px 70px rgba(0,0,0,.55),inset 0 1px 0 rgba(244,239,227,.05)}
+    .tbl::before{content:'';position:absolute;inset:16px;border:1px solid var(--line);border-radius:50%/44%;pointer-events:none}
+    .seat{position:absolute;text-align:center;width:92px;margin-left:-46px}
+    .seat-tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;padding:3px 8px;border-radius:3px;background:var(--ink);border:1px solid var(--line-2);color:var(--ash);white-space:nowrap}
+    .seat-pos{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;color:var(--dim);margin-top:4px}
+    .seat.is-live .seat-tag{border-color:var(--carmine);color:var(--carmine);background:var(--carmine-d)}
+    .seat.is-hero .seat-tag{border-color:var(--gold);color:var(--gold);background:var(--gold-d)}
+    .pot{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);text-align:center}
+    .pot-l{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--dim)}
+    .pot-v{font-family:var(--serif);font-size:31px;line-height:1.1;color:var(--bone)}
+    .hole{position:absolute;left:50%;bottom:11%;transform:translateX(-50%);display:flex;gap:5px}
+    .pc{width:36px;height:50px;border-radius:4px;background:var(--bone);color:#111;display:grid;place-items:center;font-family:var(--serif);font-size:19px;line-height:1;box-shadow:0 5px 14px rgba(0,0,0,.5)}
+    .pc.red{color:var(--carmine)}
 
-    /* TRUST BAR */
-    .trust{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg-s);padding:28px 0}
-    .tg{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:28px 48px}
-    .ti{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--body);font-weight:500}
-    .ti span.tn{font-size:26px;font-weight:800;color:var(--text);letter-spacing:-.02em}
-    .ti span.tc{color:var(--muted);font-size:14px;line-height:1.3}
-    .ti .dot{width:4px;height:4px;border-radius:50%;background:var(--dim);flex-shrink:0}
+    /* Coaching card: the payoff */
+    .coach{position:relative;margin:-30px 0 0 -8px;background:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:17px 19px 18px;box-shadow:0 22px 52px rgba(0,0,0,.6)}
+    .coach-hd{display:flex;align-items:center;justify-content:space-between;gap:10px;font-family:var(--mono);font-size:10px;letter-spacing:.13em;color:var(--dim);margin-bottom:13px}
+    .coach-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid var(--line)}
+    .coach-row:first-of-type{border-top:none}
+    .coach-k{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;color:var(--ash);white-space:nowrap}
+    .coach-v{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:-.01em}
+    .coach-v.you{color:var(--body)}
+    .coach-v.best{color:var(--jade)}
+    .verdict{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;padding:3px 7px;border-radius:3px;background:var(--gold-d);color:var(--gold);border:1px solid rgba(210,165,55,.3)}
+    .coach-why{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);font-size:14.5px;line-height:1.6;color:var(--body)}
+    .coach-why b{color:var(--bone);font-weight:500}
 
-    /* SECTIONS */
-    section{padding:64px 0}
-    .sl{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px}
-    .sg{color:var(--green)}.sbl{color:var(--blue)}.sp{color:var(--purple)}.sa{color:var(--amber)}
-    .st{font-size:clamp(26px,3.5vw,38px);font-weight:800;letter-spacing:-.015em;margin-bottom:10px;line-height:1.15}
-    .sd{color:var(--body);font-size:16px;max-width:540px;margin-bottom:36px;line-height:1.65}
+    /* ============ TRUST BAR ============ */
+    .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--ink-2)}
+    .tg{display:grid;grid-template-columns:repeat(4,1fr)}
+    .ti{padding:26px 20px;text-align:center;border-left:1px solid var(--line)}
+    .ti:first-child{border-left:none}
+    .tn{display:block;font-family:var(--serif);font-size:38px;line-height:1;color:var(--bone)}
+    .tc{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ash);margin-top:8px;line-height:1.5}
 
-    /* DIFFERENTIATOR */
-    .diff{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .diff-card{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden}
-    .diff-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-    .diff-card.dc-yes::before{background:linear-gradient(90deg,var(--green),#2dd4bf)}
-    .diff-card.dc-no::before{background:linear-gradient(90deg,var(--dim),var(--border-l))}
-    .diff-card h3{font-size:20px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-    .diff-card h3 .icon{font-size:22px}
-    .diff-card p{font-size:16px;color:var(--body);line-height:1.65}
-    .diff-card ul{list-style:none;margin-top:14px}
-    .diff-card ul li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;font-size:16px;color:var(--body);border-top:1px solid var(--border)}
-    .diff-card ul li:first-child{border-top:none}
-    .diff-card ul li .ck{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-top:1px}
-    .dc-yes .ck{background:var(--green-d);color:var(--green)}
-    .dc-no .ck{background:rgba(107,117,144,.15);color:var(--dim)}
+    /* ============ SECTIONS ============ */
+    section{padding:76px 0}
+    .sl{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;color:var(--ash);margin-bottom:14px}
+    .sl i{font-style:normal;font-size:13px}
+    .sl i.red{color:var(--carmine)}
+    .sl i.blk{color:var(--ash)}
+    .st{font-family:var(--serif);font-weight:400;font-size:clamp(32px,4.4vw,50px);letter-spacing:-.008em;margin-bottom:12px;line-height:1.08}
+    .sd{color:var(--body);font-size:17px;max-width:560px;margin-bottom:40px;line-height:1.62}
 
-    /* MODES */
-    .mg{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-    .mc{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;overflow:hidden;position:relative;transition:border-color .25s,transform .2s}
-    .mc:hover{transform:translateY(-2px)}
-    .mc--s:hover{border-color:rgba(96,165,250,.45)}.mc--t:hover{border-color:rgba(52,211,153,.45)}
-    .mc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
-    .mc--s::before{background:linear-gradient(90deg,var(--blue),var(--purple))}.mc--t::before{background:linear-gradient(90deg,var(--green),#2dd4bf)}
-    .mi{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:20px;margin-bottom:14px}
-    .mi--s{background:var(--blue-d)}.mi--t{background:var(--green-d)}
-    .mc h3{font-size:20px;font-weight:700;margin-bottom:8px}
-    .mc .ms{color:var(--body);font-size:16px;margin-bottom:18px;line-height:1.65}
-    .mf{list-style:none}.mf li{display:flex;align-items:flex-start;gap:9px;padding:6px 0;font-size:16px;color:var(--body);border-top:1px solid var(--border)}.mf li:first-child{border-top:none}
-    .fi{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:10px;margin-top:1px}
-    .mc--s .fi{background:var(--blue-d);color:var(--blue)}.mc--t .fi{background:var(--green-d);color:var(--green)}
+    /* ============ DIFFERENTIATOR ============ */
+    .diff{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .diff-card{background:var(--ink);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 26px}
+    .diff-card.dc-yes{border-color:var(--line-2)}
+    .diff-card h3{font-family:var(--serif);font-size:25px;font-weight:400;margin-bottom:10px;display:flex;align-items:center;gap:9px}
+    .diff-card h3 .icon{font-size:17px}
+    .dc-yes h3 .icon{color:var(--carmine)}
+    .dc-no h3{color:var(--ash)}
+    .dc-no h3 .icon{color:var(--dim)}
+    .diff-card p{font-size:16px;color:var(--body);line-height:1.62}
+    .dc-no p{color:var(--ash)}
+    .diff-card ul{list-style:none;margin-top:16px}
+    .diff-card ul li{display:flex;align-items:flex-start;gap:11px;padding:9px 0;font-size:15.5px;color:var(--body);border-top:1px solid var(--line)}
+    .dc-no ul li{color:var(--ash)}
+    .diff-card ul li .ck{flex-shrink:0;font-family:var(--mono);font-size:12px;line-height:1.5;margin-top:1px}
+    .dc-yes .ck{color:var(--jade)}
+    .dc-no .ck{color:var(--dim)}
 
-    /* SCREENSHOT CAROUSEL */
-    .carousel-section{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .carousel-wrap{position:relative;overflow:hidden}
-    .carousel-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:8px 0 16px}
+    /* ============ MODES ============ */
+    .mg{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+    .mc{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:30px 26px;position:relative;overflow:hidden}
+    .mc--t{border-color:var(--line-2)}
+    .mc-tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.13em;padding:4px 9px;border-radius:3px;margin-bottom:15px}
+    .mc--t .mc-tag{background:var(--carmine-d);color:var(--carmine);border:1px solid var(--carmine-l)}
+    .mc--s .mc-tag{background:var(--ink-3);color:var(--ash);border:1px solid var(--line-2)}
+    .mc h3{font-family:var(--serif);font-size:31px;font-weight:400;margin-bottom:12px;line-height:1.1}
+    .mc .lead{font-size:17px;color:var(--bone);line-height:1.55;margin-bottom:10px}
+    .mc .ms{color:var(--body);font-size:16px;margin-bottom:20px;line-height:1.62}
+    .mf{list-style:none}
+    .mf li{display:flex;align-items:flex-start;gap:11px;padding:9px 0;font-size:15.5px;color:var(--body);border-top:1px solid var(--line)}
+    .mf li:first-child{border-top:none}
+    .fi{flex-shrink:0;font-family:var(--mono);font-size:11px;line-height:1.7;color:var(--dim)}
+    .mc--t .fi{color:var(--carmine)}
+
+    /* Range grid: the Solver's instrument, at supporting scale */
+    .rgw{margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .rg{display:grid;grid-template-columns:repeat(13,1fr);gap:1.5px;max-width:300px}
+    .rgc{aspect-ratio:1;border-radius:1px;background:var(--ink-3)}
+    .rgc.r{background:var(--carmine)}
+    .rgc.m{background:var(--carmine-l)}
+    .rgl{display:flex;gap:16px;margin-top:12px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;color:var(--dim)}
+    .rgl span{display:inline-flex;align-items:center;gap:5px}
+    .rgl b{width:9px;height:9px;border-radius:1px;display:inline-block}
+
+    /* ============ SCREENSHOTS ============ */
+    .carousel-section{background:var(--ink-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .carousel-wrap{position:relative}
+    .carousel-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:6px 0 14px}
     .carousel-track::-webkit-scrollbar{display:none}
-    .carousel-item{flex:0 0 280px;scroll-snap-align:start;background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:transform .2s,border-color .2s}
-    .carousel-item:hover{transform:translateY(-3px);border-color:var(--border-l)}
-    .carousel-img{width:100%;aspect-ratio:9/19;background:#111;display:block;object-fit:contain}
-    .carousel-label{padding:12px 16px;font-size:15px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:8px}
-    .carousel-label span{font-size:13px;color:var(--muted);font-weight:400}
-    .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:16px}
-    .carousel-dot{width:8px;height:8px;border-radius:50%;background:var(--border-l);border:none;cursor:pointer;transition:all .2s;padding:0}
-    .carousel-dot.active{background:var(--green);width:24px;border-radius:4px}
+    .carousel-item{flex:0 0 268px;scroll-snap-align:start;background:var(--ink);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:border-color .2s}
+    .carousel-item:hover{border-color:var(--line-2)}
+    .carousel-img{width:100%;aspect-ratio:9/19;background:var(--ink-3);display:block;object-fit:contain}
+    .carousel-label{padding:14px 16px;border-top:1px solid var(--line)}
+    .carousel-label b{display:block;font-size:15px;font-weight:600;color:var(--bone)}
+    .carousel-label span{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:var(--ash);margin-top:4px}
+    .carousel-dots{display:flex;justify-content:center;gap:7px;margin-top:18px}
+    .carousel-dot{width:7px;height:7px;border-radius:50%;background:var(--line-2);border:none;cursor:pointer;transition:all .25s;padding:0}
+    .carousel-dot.active{background:var(--carmine);width:22px;border-radius:4px}
 
-    /* RANGES */
-    .rs{background:var(--bg-s);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-    .rl{display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center}
-    .riw{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:0 8px 28px rgba(0,0,0,.4);max-width:320px;margin:0 auto}
-    .riw img{width:100%;height:auto;display:block}
-    .rli{list-style:none;display:flex;flex-direction:column;gap:12px}
-    .rli li{display:flex;align-items:center;gap:10px;font-size:16px;color:var(--body)}
-    .rc{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;background:var(--purple-d);color:var(--purple);font-size:11px;flex-shrink:0}
+    /* ============ FEATURES ============ */
+    .fg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden}
+    .fc{background:var(--ink);padding:26px 24px;transition:background .25s}
+    .fc:hover{background:var(--ink-2)}
+    .fc.is-new{background:var(--ink-2)}
+    .fci{font-family:var(--mono);font-size:16px;line-height:1;margin-bottom:14px;display:block}
+    .fc h3{font-size:16.5px;font-weight:600;margin-bottom:8px;letter-spacing:-.005em}
+    .fc p{font-size:15.5px;color:var(--body);line-height:1.6}
 
-    /* FEATURES */
-    .fg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-    .fc{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;transition:border-color .25s,transform .2s}
-    .fc:hover{border-color:var(--border-l);transform:translateY(-2px)}
-    .fci{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-size:18px;margin-bottom:12px}
-    .fc h3{font-size:16px;font-weight:600;margin-bottom:6px}.fc p{font-size:16px;color:var(--body);line-height:1.6}
-
-    /* PRICING */
-    .pricing{position:relative;overflow:hidden}
+    /* ============ PLANS ============ */
     .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    .price-card{background:var(--bg-c);border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;position:relative;overflow:hidden;transition:border-color .2s}
-    .price-card:hover{border-color:var(--border-l)}
-    .price-card.featured{border-color:rgba(52,211,153,.3)}
-    .price-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green),var(--blue))}
-    .price-tag{font-size:14px;font-weight:600;color:var(--green);background:var(--green-d);padding:4px 10px;border-radius:999px;display:inline-block;margin-bottom:14px}
-    .price-card h3{font-size:22px;font-weight:700;margin-bottom:6px}
-    .price-card .price-desc{font-size:15px;color:var(--muted);margin-bottom:18px;line-height:1.6}
-    .price-card .price-amount{font-size:36px;font-weight:800;margin-bottom:4px;letter-spacing:-.02em}
-    .price-card .price-sub{font-size:14px;color:var(--muted);margin-bottom:20px}
+    .price-card{background:var(--ink-2);border:1px solid var(--line);border-radius:var(--r-lg);padding:28px 24px;position:relative}
+    .price-card.featured{border-color:var(--carmine-l);background:var(--ink-3)}
+    .price-tag{position:absolute;top:-1px;right:20px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;color:var(--carmine);background:var(--ink);padding:5px 9px;border:1px solid var(--carmine-l);border-top:none;border-radius:0 0 3px 3px}
+    .price-card h3{font-family:var(--serif);font-size:29px;font-weight:400;margin-bottom:6px}
+    .price-card .price-desc{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--jade);margin-bottom:20px}
     .price-features{list-style:none}
-    .price-features li{display:flex;align-items:center;gap:9px;padding:6px 0;font-size:16px;color:var(--body);border-top:1px solid var(--border)}
+    .price-features li{display:flex;align-items:flex-start;gap:10px;padding:8px 0;font-size:15.5px;color:var(--body);border-top:1px solid var(--line)}
     .price-features li:first-child{border-top:none}
-    .price-features .pck{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;font-size:9px;flex-shrink:0;background:var(--green-d);color:var(--green)}
+    .price-features .pck{flex-shrink:0;font-family:var(--mono);font-size:11px;line-height:1.6;color:var(--jade)}
+    .plans-note{color:var(--ash);font-size:15.5px;max-width:640px;margin-top:26px;line-height:1.62}
 
-    /* CTA */
-    .cb{position:relative;background:linear-gradient(135deg,#0f2027,#0a1628,#0d1f2d);border:1px solid var(--border);border-radius:20px;padding:48px 36px;text-align:center;overflow:hidden}
-    .cb::before{content:'';position:absolute;inset:0;background:radial-gradient(500px circle at 50% 0%,rgba(52,211,153,.08),transparent 60%);pointer-events:none}
-    .cb h2{font-size:30px;font-weight:800;margin-bottom:10px;position:relative}.cb p{color:var(--body);font-size:16px;margin-bottom:24px;position:relative}.cb .btn{position:relative}
+    /* ============ CTA ============ */
+    .cb{position:relative;background:var(--ink-2);border:1px solid var(--line-2);border-radius:var(--r-lg);padding:54px 36px;text-align:center;overflow:hidden}
+    .cb::before{content:'';position:absolute;inset:0;background:radial-gradient(560px circle at 50% 0%,rgba(217,59,43,.09),transparent 62%);pointer-events:none}
+    .cb h2{font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);margin-bottom:12px;position:relative;line-height:1.1}
+    .cb p{color:var(--body);font-size:16.5px;margin:0 auto 26px;position:relative;max-width:520px}
+    .cb .btn{position:relative}
 
-    /* FOOTER */
-    footer{border-top:1px solid var(--border);padding:28px 0 56px}
-    .foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
-    .fb{font-weight:600;font-size:16px}.fc2{font-size:14px;color:var(--dim);margin-top:2px}
-    .flinks{display:flex;align-items:center;gap:18px}.flinks a{font-size:14px;color:var(--muted);display:inline-flex;align-items:center;gap:5px}.flinks a:hover{color:var(--text)}
-    .flinks svg{width:16px;height:16px}
-    .social-links{display:flex;align-items:center;gap:14px;margin-top:6px}
-    .social-links a{color:var(--muted);transition:color .2s}.social-links a:hover{color:var(--text)}
-    .social-links svg{width:20px;height:20px}
+    /* ============ FOOTER ============ */
+    footer{border-top:1px solid var(--line);padding:34px 0 60px}
+    .foot{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:20px}
+    .fb{font-family:var(--serif);font-size:22px}
+    .fc2{font-size:13px;color:var(--dim);margin-top:4px;line-height:1.6}
+    .flinks{display:flex;align-items:center;gap:20px}
+    .flinks a{font-family:var(--mono);font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ash)}
+    .flinks a:hover{color:var(--bone)}
+    .social-links{display:flex;align-items:center;gap:15px;margin-top:14px}
+    .social-links a{color:var(--dim);transition:color .2s}
+    .social-links a:hover{color:var(--bone)}
+    .social-links svg{width:18px;height:18px}
 
-    /* ANIMATIONS */
-    @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-    .a{opacity:0;animation:fu .55s ease-out forwards}.a1{animation-delay:.1s}.a2{animation-delay:.2s}.a3{animation-delay:.3s}
-
-    /* RESPONSIVE */
-    @media(max-width:1024px){
-      .hi{grid-template-columns:1fr;text-align:center}
-      .hk,.hl,.hl2{margin-left:auto;margin-right:auto}
-      .ha{justify-content:center}
-      .free-highlights{justify-content:center}
-      .pf{width:270px;height:550px;margin-top:16px}
-      .diff-grid{grid-template-columns:1fr}
-      .mg{grid-template-columns:1fr}
-      .rl{grid-template-columns:1fr}
-      .fg{grid-template-columns:1fr 1fr}
-      .pricing-grid{grid-template-columns:1fr}
+    /* ============ MOTION ============ */
+    /* One orchestrated arrival, then stillness. */
+    @keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes deal{from{opacity:0;transform:translateY(-10px) rotate(-4deg)}to{opacity:1;transform:translateY(0) rotate(0)}}
+    .a{opacity:0;animation:rise .6s cubic-bezier(.2,.7,.3,1) forwards}
+    .a1{animation-delay:.08s}.a2{animation-delay:.16s}.a3{animation-delay:.24s}.a4{animation-delay:.34s}
+    .seat{opacity:0;animation:rise .5s ease-out forwards}
+    .pc{opacity:0;animation:deal .45s cubic-bezier(.2,.8,.3,1) forwards}
+    /* Visible by default; only JS-capable browsers opt into the reveal. */
+    .reveal{opacity:1;transform:none}
+    .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease-out,transform .6s cubic-bezier(.2,.7,.3,1)}
+    .js .reveal.in{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .a,.seat,.pc{opacity:1!important}
+      .reveal,.js .reveal{opacity:1!important;transform:none!important}
+      html{scroll-behavior:auto}
     }
-    @media(max-width:640px){
+    /* Older engines without aspect-ratio would collapse these boxes. */
+    @supports not (aspect-ratio: 1 / 1){
+      .tbl{height:0;padding-bottom:92%}
+      .rgc{height:0;padding-bottom:100%}
+      .carousel-img{height:auto;min-height:380px}
+    }
+    /* Keyboard focus stays visible everywhere */
+    a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+
+    /* ============ RESPONSIVE ============ */
+    @media(max-width:1040px){
+      .hi{grid-template-columns:1fr;gap:44px}
+      .sig{max-width:460px;width:100%;margin:0 auto}
+      .diff-grid,.mg,.pricing-grid{grid-template-columns:1fr}
+      .fg{grid-template-columns:1fr 1fr}
+      .rg{max-width:100%}
+    }
+    @media(max-width:680px){
       .nl a:not(.nc){display:none}
-      .hero{padding:48px 0 36px}
-      section{padding:48px 0}
+      .hero{padding:52px 0 40px}
+      section{padding:56px 0}
       .fg{grid-template-columns:1fr}
-      .tg{gap:20px 32px}
-      .cb{padding:36px 20px}
-      .carousel-item{flex:0 0 240px}
+      .tg{grid-template-columns:1fr 1fr}
+      .ti{border-left:none;border-top:1px solid var(--line);padding:20px 14px}
+      .ti:first-child,.ti:nth-child(2){border-top:none}
+      .ti:nth-child(even){border-left:1px solid var(--line)}
+      .carousel-item{flex:0 0 228px}
+      .seat{width:76px;margin-left:-38px}
+      .seat-tag{font-size:9px;padding:2px 6px}
+      .coach{margin:-18px 0 0 0}
+      .cb{padding:38px 22px}
+      .foot{flex-direction:column}
     }
   </style>
 </head>
@@ -240,8 +321,8 @@ rdt('track', 'PageVisit');
     <div class="brand-name">AceSolver</div>
   </div>
   <div class="nl">
-    <a href="#how-it-works">How It Works</a>
     <a href="#modes">Modes</a>
+    <a href="#how-it-works">Why</a>
     <a href="#features">Features</a>
     <a href="#plans">Plans</a>
     <a href="https://apps.apple.com/app/acesolver/id6743416127" target="_blank" rel="noopener" class="nc">
@@ -253,12 +334,11 @@ rdt('track', 'PageVisit');
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hg hg1"></div><div class="hg hg2"></div>
   <div class="w hi">
     <div>
-      <div class="hk a"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>Poker trainer, solver &amp; coach for iPhone</div>
+      <div class="hk a"><i>&#9830;</i> Poker trainer, solver &amp; coach for iPhone</div>
       <h1 class="a a1">Understand <em>why</em>,<br/>not just what.</h1>
-      <p class="hl a a2">Enter any No-Limit Hold'em spot. AceSolver reads the hand from poker rules, computes equity, ranges, pot odds, and SPR, then <strong>explains the best decision in plain English</strong>.</p>
+      <p class="hl a a2">Charts tell you what to do. AceSolver teaches you how to think. Train against realistic opponents, get coaching on every decision, and <strong>understand why the best move beats every alternative</strong>.</p>
       <p class="hl2 a a2">Rules-exact hand reading, not AI guesswork. Not another library of pre-solved GTO spots.</p>
       <div class="ha a a3">
         <a class="btn bp" href="https://apps.apple.com/app/acesolver/id6743416127" target="_blank" rel="noopener">
@@ -271,13 +351,55 @@ rdt('track', 'PageVisit');
         </a>
       </div>
       <div class="free-highlights a a3">
-        <div class="free-pill">✦ Preflop solver: always free, no daily limit</div>
-        <div class="free-pill">✦ 3 free postflop hands per day, no account needed</div>
+        <div class="free-pill"><i>&#10022;</i> Preflop solver: always free, no daily limit</div>
+        <div class="free-pill"><i>&#10022;</i> 3 free postflop hands per day, no account needed</div>
       </div>
-      <p class="a a3" style="font-size:14px;color:var(--muted);margin-top:14px;max-width:480px">Built for poker study, training, and post-session review. Not for in-game assistance.</p>
+      <p class="hero-fine a a3">Built for poker study, training, and post-session review. Not for in-game assistance.</p>
     </div>
-    <div class="a a3">
-      <div class="pf"><div class="ps"><img src="Main-screen.PNG" alt="AceSolver app: rules-exact poker hand analysis main screen"/></div></div>
+
+    <!-- SIGNATURE: a table of imperfect opponents, and the coaching that follows -->
+    <div class="sig a a3">
+      <div class="tbl" role="img" aria-label="A six-handed poker table. Opponents are set to Maniac, Trapper, Nit, Fish and TAG profiles. Hero is on the button holding the ace and five of spades.">
+        <div class="seat is-live" style="left:22%;top:7%;animation-delay:.40s">
+          <span class="seat-tag">MANIAC</span><span class="seat-pos">HJ &middot; 74bb</span>
+        </div>
+        <div class="seat" style="left:62%;top:7%;animation-delay:.46s">
+          <span class="seat-tag">TRAPPER</span><span class="seat-pos">CO &middot; 120bb</span>
+        </div>
+        <div class="seat" style="left:88%;top:40%;animation-delay:.52s">
+          <span class="seat-tag">NIT</span><span class="seat-pos">SB &middot; 88bb</span>
+        </div>
+        <div class="seat" style="left:12%;top:40%;animation-delay:.58s">
+          <span class="seat-tag">TAG</span><span class="seat-pos">UTG &middot; 96bb</span>
+        </div>
+        <div class="seat" style="left:78%;top:70%;animation-delay:.64s">
+          <span class="seat-tag">FISH</span><span class="seat-pos">BB &middot; 63bb</span>
+        </div>
+        <div class="seat is-hero" style="left:22%;top:70%;animation-delay:.70s">
+          <span class="seat-tag">YOU</span><span class="seat-pos">BTN &middot; 100bb</span>
+        </div>
+        <div class="pot">
+          <div class="pot-l">POT</div>
+          <div class="pot-v">4bb</div>
+        </div>
+        <div class="hole">
+          <div class="pc" style="animation-delay:.78s">A&#9824;</div>
+          <div class="pc" style="animation-delay:.86s">5&#9824;</div>
+        </div>
+      </div>
+
+      <div class="coach a a4">
+        <div class="coach-hd"><span>TRAINER &middot; HAND 47</span><span class="verdict">CLOSE</span></div>
+        <div class="coach-row">
+          <span class="coach-k">YOUR MOVE</span>
+          <span class="coach-v you">CALL 2.5bb</span>
+        </div>
+        <div class="coach-row">
+          <span class="coach-k">BEST LINE</span>
+          <span class="coach-v best">RAISE TO 8bb</span>
+        </div>
+        <p class="coach-why">The <b>Maniac</b> opens far too wide from the hijack and folds to pressure. Raising isolates a weak range and takes the <b>Nit</b> out of the pot. Calling is playable, it just lets the <b>Fish</b> in the big blind come along cheap.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -285,123 +407,117 @@ rdt('track', 'PageVisit');
 <!-- TRUST BAR -->
 <div class="trust"><div class="w">
   <div class="tg">
-    <div class="ti">
-      <span class="tn">10</span>
-      <span class="tc">Players<br/>multiway</span>
-    </div>
-    <span class="dot" style="width:4px;height:4px;border-radius:50%;background:var(--dim)"></span>
-    <div class="ti">
-      <span class="tn">15</span>
-      <span class="tc">Opponent<br/>profiles</span>
-    </div>
-    <span class="dot" style="width:4px;height:4px;border-radius:50%;background:var(--dim)"></span>
-    <div class="ti">
-      <span class="tn">15</span>
-      <span class="tc">Languages<br/>supported</span>
-    </div>
-    <span class="dot" style="width:4px;height:4px;border-radius:50%;background:var(--dim)"></span>
-    <div class="ti">
-      <span class="tn">3</span>
-      <span class="tc">Free postflop<br/>hands/day</span>
-    </div>
+    <div class="ti"><span class="tn">10</span><span class="tc">Players<br/>multiway</span></div>
+    <div class="ti"><span class="tn">15</span><span class="tc">Opponent<br/>profiles</span></div>
+    <div class="ti"><span class="tn">15</span><span class="tc">Languages<br/>supported</span></div>
+    <div class="ti"><span class="tn">3</span><span class="tc">Free postflop<br/>hands/day</span></div>
   </div>
 </div></div>
 
-<!-- WHAT MAKES IT DIFFERENT -->
-<section class="diff" id="how-it-works"><div class="w">
-  <div class="sl sg">★ Rules-exact hand reading</div>
-  <h2 class="st">This is not a pre-solved GTO library</h2>
-  <p class="sd">AceSolver analyzes your exact situation on demand (every stack size, every position, every action) and tells you not just what to do, but why.</p>
-  <div class="diff-grid">
-    <div class="diff-card dc-yes">
-      <h3><span class="icon">✦</span> AceSolver</h3>
-      <p>On-demand analysis of your exact scenario: rules-exact hand reading and an integrated Monte Carlo equity calculator, explained in plain English.</p>
-      <ul>
-        <li><span class="ck">✓</span>Explains the WHY behind every recommendation</li>
-        <li><span class="ck">✓</span>Handles any stack depth, any number of players, any action sequence</li>
-        <li><span class="ck">✓</span>Adjusts to your opponent profiles (LAG, TAG, NIT, Fish, and 11 more)</li>
-        <li><span class="ck">✓</span>ICM-aware tournament strategy, not just cash game theory</li>
-        <li><span class="ck">✓</span>Fine-tuned and validated by experienced poker professionals</li>
+<!-- MODES -->
+<section id="modes"><div class="w">
+  <div class="sl reveal"><i class="red">&#9829;</i> Two modes</div>
+  <h2 class="st reveal">Choose how you improve</h2>
+  <p class="sd reveal">Structured training or deep hand analysis. Switch anytime.</p>
+  <div class="mg">
+    <div class="mc mc--t reveal">
+      <span class="mc-tag">TRAINER MODE</span>
+      <h3>Play hands, get coached</h3>
+      <p class="lead">Poker is not played against perfect opponents. Neither should your training.</p>
+      <p class="ms">Practice against realistic opponents and get instant coaching on every decision.</p>
+      <ul class="mf">
+        <li><span class="fi">&rsaquo;</span>The game runs automatically, just play your spots</li>
+        <li><span class="fi">&rsaquo;</span>Opponents: LAG, TAG, Calling Station, Trapper &amp; more</li>
+        <li><span class="fi">&rsaquo;</span>Get coaching on every decision: understand why the best move beats every alternative</li>
+        <li><span class="fi">&rsaquo;</span>Shuffle positions to train every seat</li>
+        <li><span class="fi">&rsaquo;</span>Hand by hand, build a framework and instincts that transfer to real tables</li>
       </ul>
     </div>
-    <div class="diff-card dc-no">
-      <h3><span class="icon">○</span> Traditional solvers</h3>
-      <p>Pre-computed solutions for standardized spots. No reasoning, no adaptation, limited scenarios.</p>
-      <ul>
-        <li><span class="ck">×</span>Shows a chart, you have to figure out the "why" yourself</li>
-        <li><span class="ck">×</span>Fixed scenarios that rarely match your actual hand</li>
-        <li><span class="ck">×</span>One-size-fits-all, no opponent profiling</li>
-        <li><span class="ck">×</span>Often limited to heads-up or 3-way pots</li>
-        <li><span class="ck">×</span>Expensive desktop software, steep learning curve</li>
+    <div class="mc mc--s reveal">
+      <span class="mc-tag">SOLVER MODE</span>
+      <h3>Bring your toughest spot</h3>
+      <p class="ms">Input any situation and get a clear recommendation with the full reasoning behind it.</p>
+      <ul class="mf">
+        <li><span class="fi">&rsaquo;</span>Enter stacks, positions, cards &amp; full action history</li>
+        <li><span class="fi">&rsaquo;</span>Primary &amp; secondary action with sizing</li>
+        <li><span class="fi">&rsaquo;</span>Full strategy explanation, understand the "why"</li>
+        <li><span class="fi">&rsaquo;</span>Hero &amp; villain range matrices</li>
+        <li><span class="fi">&rsaquo;</span>Cash games &amp; tournaments with ICM pressure</li>
       </ul>
+      <div class="rgw">
+        <div class="rg" id="rangeGrid" role="img" aria-label="A thirteen by thirteen range matrix showing a button opening range, with hands shaded by raise and mixed frequency."></div>
+        <div class="rgl">
+          <span><b style="background:var(--carmine)"></b>Raise</span>
+          <span><b style="background:var(--carmine-l)"></b>Mixed</span>
+          <span><b style="background:var(--ink-3)"></b>Fold</span>
+        </div>
+      </div>
     </div>
   </div>
 </div></section>
 
-<!-- SCREENSHOT CAROUSEL -->
+<!-- SCREENSHOTS -->
 <section class="carousel-section" id="screenshots"><div class="w">
-  <div class="sl sbl">◆ See it in action</div>
-  <h2 class="st">Built for every spot</h2>
-  <p class="sd">From the strategy window to the range matrix: everything you need to study and improve.</p>
-  <div class="carousel-wrap">
+  <div class="sl reveal"><i class="red">&#9830;</i> In the app</div>
+  <h2 class="st reveal">Built for every spot</h2>
+  <p class="sd reveal">From the table to the range matrix: everything you need to study and improve.</p>
+  <div class="carousel-wrap reveal">
     <div class="carousel-track" id="carouselTrack">
       <div class="carousel-item">
-        <img class="carousel-img" src="Main-screen.PNG" alt="AceSolver main solver screen"/>
-        <div class="carousel-label">Solver Setup<span>Build any scenario</span></div>
+        <img class="carousel-img" src="villain-profile.PNG" alt="AceSolver villain profile selection"/>
+        <div class="carousel-label"><b>Opponent Profiles</b><span>TUNE TO OPPONENT STYLE</span></div>
       </div>
       <div class="carousel-item">
         <img class="carousel-img" src="strategy-screenshot.PNG" alt="AceSolver strategy recommendation window"/>
-        <div class="carousel-label">Strategy Window<span>Action + reasoning</span></div>
+        <div class="carousel-label"><b>Strategy Window</b><span>ACTION + REASONING</span></div>
       </div>
       <div class="carousel-item">
         <img class="carousel-img" src="range-screenshot.PNG" alt="AceSolver range matrix"/>
-        <div class="carousel-label">Range Matrix<span>Hero & villain ranges</span></div>
+        <div class="carousel-label"><b>Range Matrix</b><span>HERO &amp; VILLAIN RANGES</span></div>
       </div>
       <div class="carousel-item">
-        <img class="carousel-img" src="villain-profile.PNG" alt="AceSolver villain profile selection"/>
-        <div class="carousel-label">Villain Profiles<span>Tune to opponent style</span></div>
+        <img class="carousel-img" src="Main-screen.PNG" alt="AceSolver main solver screen"/>
+        <div class="carousel-label"><b>Solver Setup</b><span>BUILD ANY SCENARIO</span></div>
       </div>
       <div class="carousel-item">
         <img class="carousel-img" src="icm-pressure.PNG" alt="AceSolver ICM pressure selection"/>
-        <div class="carousel-label">ICM Pressure<span>Tournament stage awareness</span></div>
+        <div class="carousel-label"><b>ICM Pressure</b><span>TOURNAMENT STAGE AWARENESS</span></div>
       </div>
       <div class="carousel-item">
         <img class="carousel-img" src="evaluator-screenshot.PNG" alt="AceSolver hand evaluator"/>
-        <div class="carousel-label">Hand Evaluator<span>Equity & outs</span></div>
+        <div class="carousel-label"><b>Hand Evaluator</b><span>EQUITY &amp; OUTS</span></div>
       </div>
     </div>
     <div class="carousel-dots" id="carouselDots"></div>
   </div>
 </div></section>
 
-<!-- MODES -->
-<section id="modes"><div class="w">
-  <div class="sl sg">★ Two modes</div>
-  <h2 class="st">Choose how you improve</h2>
-  <p class="sd">Deep hand analysis or structured training. Switch anytime.</p>
-  <div class="mg">
-    <div class="mc mc--s">
-      <div class="mi mi--s">✦</div>
-      <h3>Solver Mode</h3>
-      <p class="ms">Input any situation and get a clear recommendation with the full reasoning behind it.</p>
-      <ul class="mf">
-        <li><span class="fi">→</span>Enter stacks, positions, cards & full action history</li>
-        <li><span class="fi">→</span>Primary & secondary action with sizing</li>
-        <li><span class="fi">→</span>Full strategy explanation, understand the "why"</li>
-        <li><span class="fi">→</span>Hero & villain range matrices</li>
-        <li><span class="fi">→</span>Cash games & tournaments with ICM pressure</li>
+<!-- WHAT MAKES IT DIFFERENT -->
+<section class="diff" id="how-it-works"><div class="w">
+  <div class="sl reveal"><i class="blk">&#9824;</i> Rules-exact hand reading</div>
+  <h2 class="st reveal">This is not a pre-solved GTO library</h2>
+  <p class="sd reveal">AceSolver analyzes your exact situation on demand (every stack size, every position, every action) and tells you not just what to do, but why.</p>
+  <div class="diff-grid">
+    <div class="diff-card dc-yes reveal">
+      <h3><span class="icon">&#9830;</span> AceSolver</h3>
+      <p>On-demand analysis of your exact scenario: rules-exact hand reading and precise equity math, explained in plain English.</p>
+      <ul>
+        <li><span class="ck">&#43;</span>Explains the WHY behind every recommendation</li>
+        <li><span class="ck">&#43;</span>Handles any stack depth, any number of players, any action sequence</li>
+        <li><span class="ck">&#43;</span>Adjusts to your opponent profiles (LAG, TAG, NIT, Fish, and 11 more)</li>
+        <li><span class="ck">&#43;</span>ICM-aware tournament strategy, not just cash game theory</li>
+        <li><span class="ck">&#43;</span>Fine-tuned and validated by experienced poker professionals</li>
       </ul>
     </div>
-    <div class="mc mc--t">
-      <div class="mi mi--t">📖</div>
-      <h3>Trainer Mode</h3>
-      <p class="ms">Practice against realistic opponents and get instant coaching on every decision.</p>
-      <ul class="mf">
-        <li><span class="fi">→</span>The game runs automatically, just play your spots</li>
-        <li><span class="fi">→</span>Opponents: LAG, TAG, Calling Station, Trapper & more</li>
-        <li><span class="fi">→</span>See the recommended play after every decision</li>
-        <li><span class="fi">→</span>Shuffle positions to train every seat</li>
-        <li><span class="fi">→</span>Build intuition before hitting real tables</li>
+    <div class="diff-card dc-no reveal">
+      <h3><span class="icon">&#9675;</span> Traditional solvers</h3>
+      <p>Pre-computed solutions for standardized spots. No reasoning, no adaptation, limited scenarios.</p>
+      <ul>
+        <li><span class="ck">&minus;</span>Shows a chart, you have to figure out the "why" yourself</li>
+        <li><span class="ck">&minus;</span>Fixed scenarios that rarely match your actual hand</li>
+        <li><span class="ck">&minus;</span>One-size-fits-all, no opponent profiling</li>
+        <li><span class="ck">&minus;</span>Often limited to heads-up or 3-way pots</li>
+        <li><span class="ck">&minus;</span>Expensive desktop software, steep learning curve</li>
       </ul>
     </div>
   </div>
@@ -409,65 +525,66 @@ rdt('track', 'PageVisit');
 
 <!-- FEATURES -->
 <section id="features"><div class="w">
-  <div class="sl sbl">◆ Features</div>
-  <h2 class="st">Everything you need, nothing you don't</h2>
-  <p class="sd">Built by poker players, fine-tuned by experienced pros.</p>
-  <div class="fg">
-    <div class="fc"><div class="fci" style="background:var(--blue-d);color:var(--blue)">🧠</div><h3>Rules-exact hand reading</h3><p>Made hands, draws, outs, better combos, and Monte Carlo equity are computed from No-Limit Hold'em rules. The strategy is then explained in plain English, factoring in stacks, positions, board texture, and opponent tendencies.</p></div>
-    <div class="fc"><div class="fci" style="background:var(--green-d);color:var(--green)">🎯</div><h3>Up to 10 Players</h3><p>Full multiway support with accurate pot calculations, side pots, and multi-street action sequences.</p></div>
-    <div class="fc"><div class="fci" style="background:var(--purple-d);color:var(--purple)">🏆</div><h3>Tournament & ICM</h3><p>ICM pressure adjusts recommendations based on bubble proximity, payout structures, and stack dynamics.</p></div>
-    <div class="fc"><div class="fci" style="background:var(--amber-d);color:var(--amber)">⚡</div><h3>Fast, Advanced & Expert</h3><p>Three levels of analysis depth that scale with your plan — quick reads when you're short on time, or the deepest breakdown for the toughest spots.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(244,114,182,.1);color:#f472b6">📊</div><h3>Equity & Math</h3><p>Integrated Monte Carlo simulations, pot odds, SPR, all computed and explained in plain language.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(34,211,238,.1);color:#22d3ee">🌍</div><h3>15 Languages</h3><p>Get full analysis in your language: English, French, Spanish, Portuguese, Japanese, Chinese, and more.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(167,139,250,.1);color:var(--purple)">👤</div><h3>15 Opponent Profiles</h3><p>Set opponent profiles (LAG, TAG, NIT, Fish, Maniac, Trapper and more) for exploitative strategy adjustments.</p></div>
-    <div class="fc"><div class="fci" style="background:var(--blue-d);color:var(--blue)">🎭</div><h3>Play as Your Hero</h3><p>Choose your Hero style: GTO, TAG, NIT, or LAG, and get strategy tuned to how you play. Pro unlocks TAG and GTO; Expert adds NIT and LAG.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(52,211,153,.1);color:var(--green)">📋</div><h3>Hand History</h3><p>Every analysis saved automatically. Review, compare, and replay past hands to track your improvement.</p></div>
-    <div class="fc"><div class="fci" style="background:rgba(251,191,36,.1);color:var(--amber)">🃏</div><h3>Hand Evaluator</h3><p>Instant hand strength, outs, and equity calculations with detailed combo counting and draw analysis.</p></div>
+  <div class="sl reveal"><i class="blk">&#9827;</i> Features</div>
+  <h2 class="st reveal">Everything you need, nothing you don't</h2>
+  <p class="sd reveal">Built by poker players, fine-tuned by experienced pros.</p>
+  <div class="fg reveal">
+    <div class="fc"><span class="fci" style="color:var(--carmine)">&#9829;</span><h3>15 Opponent Profiles</h3><p>Set opponent profiles (LAG, TAG, NIT, Fish, Maniac, Trapper and more) for exploitative strategy adjustments.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--gold)">&#9812;</span><h3>Play as Your Hero</h3><p>Choose your Hero style: GTO, TAG, NIT, or LAG, and get strategy tuned to how you play. Pro unlocks TAG and GTO; Expert adds NIT and LAG.</p></div>
+    <div class="fc is-new"><span class="fci" style="color:var(--carmine)">&#9636;</span><h3>Decision Review Dashboard</h3><p>Decision Review Dashboard: your strongest and weakest decisions, by position and street. Mixed strategies earn proportional credit: valid secondary lines count as close, not wrong.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--jade)">&#8801;</span><h3>Hand History</h3><p>Every analysis saved automatically. Review, compare, and replay past hands to track your improvement.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--carmine)">&#9830;</span><h3>Rules-exact hand reading</h3><p>Made hands, draws, outs, better combos, and equity are computed from No-Limit Hold'em rules. The strategy is then explained in plain English, factoring in stacks, positions, board texture, and opponent tendencies.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--jade)">&#37;</span><h3>Equity &amp; Math</h3><p>Equity, pot odds, and SPR, all computed precisely and explained in plain language.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--gold)">&#9650;</span><h3>Fast, Advanced &amp; Expert</h3><p>Three levels of analysis depth that scale with your plan: quick reads when you're short on time, or the deepest breakdown for the toughest spots.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--ash)">&#9827;</span><h3>Up to 10 Players</h3><p>Full multiway support with accurate pot calculations, side pots, and multi-street action sequences.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--gold)">&#9733;</span><h3>Tournament &amp; ICM</h3><p>ICM pressure adjusts recommendations based on bubble proximity, payout structures, and stack dynamics.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--jade)">&#931;</span><h3>Hand Evaluator</h3><p>Instant hand strength, outs, and equity calculations with detailed combo counting and draw analysis.</p></div>
+    <div class="fc"><span class="fci" style="color:var(--ash)">&#9678;</span><h3>15 Languages</h3><p>Get full analysis in your language: English, French, Spanish, Portuguese, Japanese, Chinese, and more.</p></div>
   </div>
 </div></section>
 
 <!-- PLANS -->
 <section class="pricing" id="plans"><div class="w">
-  <div class="sl sp">◆ Plans</div>
-  <h2 class="st">Plans that match your game</h2>
-  <p class="sd">Start free, no account needed. Each plan unlocks deeper analysis and more tools. Manage and upgrade anytime in the app.</p>
+  <div class="sl reveal"><i class="red">&#9830;</i> Plans</div>
+  <h2 class="st reveal">Plans that match your game</h2>
+  <p class="sd reveal">Start free, no account needed. Each plan unlocks deeper analysis and more tools. Manage and upgrade anytime in the app.</p>
   <div class="pricing-grid">
-    <div class="price-card">
+    <div class="price-card reveal">
       <h3>Standard</h3>
-      <p class="price-desc" style="color:var(--green)">Fast engine</p>
+      <p class="price-desc">Fast engine</p>
       <ul class="price-features">
-        <li><span class="pck">✓</span>Unlimited hands</li>
-        <li><span class="pck">✓</span>Practice against GTO opponents</li>
+        <li><span class="pck">&#43;</span>Unlimited hands</li>
+        <li><span class="pck">&#43;</span>Practice against GTO opponents</li>
       </ul>
     </div>
-    <div class="price-card featured">
-      <span class="price-tag">Recommended</span>
+    <div class="price-card featured reveal">
+      <span class="price-tag">RECOMMENDED</span>
       <h3>Pro</h3>
-      <p class="price-desc" style="color:var(--green)">Fast and advanced engines</p>
+      <p class="price-desc">Fast and advanced engines</p>
       <ul class="price-features">
-        <li><span class="pck">✓</span>Everything in Standard</li>
-        <li><span class="pck">✓</span>All 15 opponent profiles, not just GTO</li>
-        <li><span class="pck">✓</span>Build hero and villain ranges</li>
-        <li><span class="pck">✓</span>Play as Hero: TAG or GTO</li>
+        <li><span class="pck">&#43;</span>Everything in Standard</li>
+        <li><span class="pck">&#43;</span>All 15 opponent profiles, not just GTO</li>
+        <li><span class="pck">&#43;</span>Build hero and villain ranges</li>
+        <li><span class="pck">&#43;</span>Play as Hero: TAG or GTO</li>
       </ul>
     </div>
-    <div class="price-card">
+    <div class="price-card reveal">
       <h3>Expert</h3>
-      <p class="price-desc" style="color:var(--green)">Fast, advanced and expert engines</p>
+      <p class="price-desc">Fast, advanced and expert engines</p>
       <ul class="price-features">
-        <li><span class="pck">✓</span>Everything in Pro</li>
-        <li><span class="pck">✓</span>Adds NIT and LAG Hero profiles</li>
-        <li><span class="pck">✓</span>Deepest analysis and explanations</li>
-        <li><span class="pck">✓</span>6 ICM levels for tournaments</li>
+        <li><span class="pck">&#43;</span>Everything in Pro</li>
+        <li><span class="pck">&#43;</span>Adds NIT and LAG Hero profiles</li>
+        <li><span class="pck">&#43;</span>Deepest analysis and explanations</li>
+        <li><span class="pck">&#43;</span>6 ICM levels for tournaments</li>
       </ul>
     </div>
   </div>
-  <p class="sd" style="margin-top:24px;margin-bottom:0">Free to start: unlimited preflop analysis plus 3 postflop hands a day, no account needed. See current prices and subscribe in the app.</p>
+  <p class="plans-note reveal">Free to start: unlimited preflop analysis plus 3 postflop hands a day, no account needed. See current prices and subscribe in the app.</p>
 </div></section>
 
 <!-- CTA -->
 <section><div class="w">
-  <div class="cb">
+  <div class="cb reveal">
     <h2>Ready to play smarter?</h2>
     <p>Preflop analysis is always free with no daily limit. Plus 3 free postflop hands per day, no account required.</p>
     <a class="btn bp" href="https://apps.apple.com/app/acesolver/id6743416127" target="_blank" rel="noopener">
@@ -481,9 +598,9 @@ rdt('track', 'PageVisit');
 <footer><div class="w foot">
   <div>
     <div class="fb">AceSolver</div>
-    <div class="fc2">© 2026 AppThemis Technologies. All rights reserved.</div>
-    <div class="fc2" style="margin-top:6px;max-width:520px">Built for poker study, training, and post-session review. Not for in-game assistance.</div>
-    <div class="fc2" style="margin-top:6px;max-width:520px">AceSolver is a poker strategy and training tool intended for adults of legal gambling age. It is not directed at minors, involves no real-money gambling, and offers no opportunity to win money or prizes.</div>
+    <div class="fc2">&copy; 2026 AppThemis Technologies. All rights reserved.</div>
+    <div class="fc2" style="max-width:520px">Built for poker study, training, and post-session review. Not for in-game assistance.</div>
+    <div class="fc2" style="max-width:520px">AceSolver is a poker strategy and training tool intended for adults of legal gambling age. It is not directed at minors, involves no real-money gambling, and offers no opportunity to win money or prizes.</div>
     <div class="social-links">
       <!-- YouTube -->
       <a href="https://www.youtube.com/@AceSolver-MultiwayPokerSolver" target="_blank" rel="noopener" title="YouTube">
@@ -510,7 +627,38 @@ rdt('track', 'PageVisit');
   </div>
 </div></footer>
 
-<!-- CAROUSEL JS -->
+<!-- RANGE MATRIX (Solver Mode card) -->
+<script>
+(function(){
+  var grid = document.getElementById('rangeGrid');
+  if (!grid) return;
+  var R = ['A','K','Q','J','T','9','8','7','6','5','4','3','2'];
+  // A standard button opening range, shaded by frequency.
+  var RAISE = new Set(('AA,KK,QQ,JJ,TT,99,88,77,66,55,'+
+    'AKs,AQs,AJs,ATs,A9s,A8s,A7s,A6s,A5s,A4s,A3s,A2s,'+
+    'KQs,KJs,KTs,K9s,K8s,K7s,K6s,K5s,QJs,QTs,Q9s,Q8s,'+
+    'JTs,J9s,J8s,T9s,T8s,98s,97s,87s,86s,76s,65s,54s,'+
+    'AKo,AQo,AJo,ATo,KQo,KJo,KTo,QJo,QTo,JTo').split(','));
+  var MIX = new Set(('44,33,22,K4s,K3s,K2s,Q7s,Q6s,Q5s,Q4s,J7s,J6s,T7s,T6s,'+
+    '96s,85s,75s,64s,53s,43s,A9o,A8o,A7o,A6o,A5o,A4o,A3o,A2o,'+
+    'K9o,K8o,K7o,Q9o,J9o,T9o,98o').split(','));
+  var frag = document.createDocumentFragment();
+  for (var i = 0; i < 13; i++) {
+    for (var j = 0; j < 13; j++) {
+      var hand = i === j ? R[i] + R[j]
+               : i < j  ? R[i] + R[j] + 's'
+                        : R[j] + R[i] + 'o';
+      var cell = document.createElement('div');
+      cell.className = 'rgc' + (RAISE.has(hand) ? ' r' : MIX.has(hand) ? ' m' : '');
+      cell.title = hand;
+      frag.appendChild(cell);
+    }
+  }
+  grid.appendChild(frag);
+})();
+</script>
+
+<!-- CAROUSEL -->
 <script>
 (function(){
   const track = document.getElementById('carouselTrack');
@@ -532,6 +680,9 @@ rdt('track', 'PageVisit');
 
   const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
+  // Dots still scroll the track without an observer; only the active state needs it.
+  if (!('IntersectionObserver' in window)) return;
+
   // Use IntersectionObserver for reliable active detection
   const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
@@ -545,6 +696,27 @@ rdt('track', 'PageVisit');
   }, { root: track, threshold: 0.5 });
 
   items.forEach(function(item) { observer.observe(item); });
+})();
+</script>
+
+<!-- SCROLL REVEAL -->
+<script>
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  var show = function(){ Array.prototype.forEach.call(els, function(el){ el.classList.add('in'); }); };
+  // No observer support, or motion is unwelcome: show everything at once.
+  if (!('IntersectionObserver' in window) ||
+      (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)) {
+    show();
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(function(el){ io.observe(el); });
 })();
 </script>
 
@@ -565,6 +737,6 @@ document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(link){
   });
 });
 </script>
-  
+
 </body>
 </html>
